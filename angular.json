@@ -714,7 +714,87 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/demo-and-doc/src/favicon.ico",
-              "projects/demo-and-doc/src/assets"
+              "projects/demo-and-doc/src/assets",
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-core/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-theme/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-layout/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-privacy/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-user/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-location/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-picker/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-prism/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-forms/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-image/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-tags-and-ratings/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-calendar/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-business/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-charts/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-forms/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-bundle-settings/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "projects/demo-and-doc/src/styles.scss"
