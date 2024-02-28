@@ -1,0 +1,1 @@
+export const BINOM_SDK_IMAGE = "@binom/sdk-image";

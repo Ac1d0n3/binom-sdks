@@ -1,0 +1,41 @@
+<mat-toolbar [color]="color" class="{{orderData.length >0 ? 'bn-mini-header-sort ':'bn-mini-header '}} {{withSearch && !showLabel ? '' : 'withLabel'}}{{orderData.length >0 ? 'Sort':''}}">
+
+    @if(showLabel && !show){
+      <div class="label">{{ label | translate }}</div>
+    }
+
+    @if(show && withSearch){
+      <bn-mini-search style="width:100%"
+        (searchTextChange)="searchChange($event)"
+        (activeSearchFields)="onActivSearchFields($event)"
+        [searchText]="searchText"
+        [searchFields]="searchFields"
+        [currentSelected]="currentSelected"
+        [enableToolTips]="enableToolTips"
+        [translateTag]="translateTag">
+      </bn-mini-search>
+    }
+    
+    <div>
+      <button mat-icon-button class="bn-mini-header-toggle bn-button-fa" 
+      matTooltip="{{(translateTag+'bnMiniSearch.'+(show? searchText != ''? 'clear': 'hide': 'show')) | translate}}"
+      [matTooltipDisabled]="!enableToolTips" 
+      (click)="clickAction()" > 
+      <i [class]=" 'fas ' + (show? searchText != ''? 'fa-times': 'fa-search-minus': 'fa-search-plus')"></i>
+      </button>
+    </div>
+    <div>
+
+    @if(orderData.length>0){
+      <bn-sort-menu
+        (activeOrder)="orderChange($event)"
+        [orderData]="orderData" size="small"
+        [enableToolTips]="enableToolTips"
+        [translateTag]="translateTag"
+        class="orderMenue">
+      </bn-sort-menu>
+    }
+   
+  </div>
+
+</mat-toolbar>

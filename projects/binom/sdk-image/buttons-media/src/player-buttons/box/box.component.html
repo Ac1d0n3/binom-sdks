@@ -1,0 +1,55 @@
+
+<button mat-button class="bn-button-fa bn-player-box-style"
+  matTooltip="" [matTooltipDisabled]="!enableToolTips"
+  (click)="fireAction('backward-step')"
+  [disabled]="disableBackward"> 
+  <i class="fas fa-step-backward"></i>
+</button>
+
+<button mat-button *ngIf="subButtons" matTooltip=""  class="bn-button-fa bn-player-box-style"
+  [matTooltipDisabled]="!enableToolTips"
+  (click)="fireAction('backward')"
+  [disabled]="disableBackward">
+  <i class="fas fa-backward"></i>
+</button>
+
+
+<button mat-button class="bn-button-fa bn-player-box-style"
+  matTooltip="" [matTooltipDisabled]="!enableToolTips"
+  (click)="fireAction(paused? 'play':'pause'); paused=!paused">
+  <i class="fas {{paused? 'fa-pause':'fa-play'}}"></i>
+</button>
+
+
+<button mat-button *ngIf="subButtons" class="bn-button-fa bn-player-box-style"
+  matTooltip=""  [matTooltipDisabled]="!enableToolTips"
+  [disabled]="disableForward"
+  (click)="fireAction('forward')">
+  <i class="fas fa-forward"></i>
+</button>
+
+<button mat-button class="bn-button-fa bn-player-box-style"
+  matTooltip="" [matTooltipDisabled]="!enableToolTips"
+  [disabled]="disableForward"
+  (click)="fireAction('forward-step')">
+  <i class="fas fa-step-forward"></i>
+</button>
+
+<button mat-button *ngIf="gridButton" class="bn-button-fa bn-player-box-style"
+  matTooltip="" [matTooltipDisabled]="!enableToolTips"
+  (click)="fireAction('grid')"
+  icon="fa-th-large"><i class="fas fa-th-large"></i>
+</button>
+
+<button mat-button *ngIf="fullscreenButton"  class="bn-button-fa bn-player-box-style"
+  [disabled]="disableFullscreen"
+  matTooltip="" [matTooltipDisabled]="!enableToolTips"
+  (click)="fireAction(fullscreen?'collapse':'expand'); fullscreen=!fullscreen">
+  <i class="fas {{fullscreen?'fa-compress-alt':'fa-expand-alt'}}"></i>
+</button>
+
+<button mat-button *ngIf="audioButton" class="bn-button-fa bn-player-box-style"
+  matTooltip="" [matTooltipDisabled]="!enableToolTips"
+  (click)="fireAction(audioOff?'audio-on':'audio-off');audioOff=!audioOff">
+  <i class="fas {{audioOff?'fa-volume-mute':'fa-volume-up'}}"></i>
+</button>

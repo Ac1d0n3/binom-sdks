@@ -1,0 +1,5 @@
+@if(allow){
+    <ng-content></ng-content>
+} @else {
+    {{('privacy.content.'+this.type) | translate}}
+}

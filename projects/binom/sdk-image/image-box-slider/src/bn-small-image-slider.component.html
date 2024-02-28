@@ -1,0 +1,38 @@
+<div class="bn-small-image-slider" >
+    <div class="regular-border bn-small-image-slider-image" (click)="showFullImages()"
+
+    [style.background]="'url(' + images[activeIndex] + ')'" 
+    > 
+    </div>
+
+    <div class="bn-small-image-slider-buttons" style="height:48px;"> 
+        <ng-container *ngIf="images.length > 1">
+            <button (click)="activeIndex = i" *ngFor="let item of images; let i = index;" class="bn-button-fa" mat-icon-button style="margin: -5px!important;"> 
+                <i class="{{ i === activeIndex ? 'fas fa-dot-circle':'far fa-circle'}}"></i> 
+            </button>
+        </ng-container>
+      
+
+    </div>
+
+</div>   
+
+<div class="bn-img-modal" *ngIf="showFull" (onClose)="closeFullImages()" [title]="title">
+    <div class="bn-small-image-slider-full-wrapper " >
+        <div class="bn-small-image-slider-full" 
+
+        [style.background]="'url(' + images[activeIndex] + ')'" 
+        > 
+        </div>
+
+        <div class="bn-small-image-slider-buttons" style="height:48px;"> 
+            <ng-container *ngIf="images.length > 1">
+                <button (click)="activeIndex = i" *ngFor="let item of images; let i = index;" class="bn-button-fa" mat-icon-button style="margin: -5px!important;"> 
+                    <i class="{{ i === activeIndex ? 'fas fa-dot-circle':'far fa-circle'}}"></i> 
+                </button>
+            </ng-container>
+        
+
+        </div>
+    </div>
+</div>

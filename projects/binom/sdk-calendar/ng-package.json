@@ -1,0 +1,7 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/binom/sdk-calendar",
+  "lib": {
+    "entryFile": "public-api.ts"
+  }
+}

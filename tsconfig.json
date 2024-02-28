@@ -2,6 +2,122 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@binom/sdk-advertise/*": [
+        "./dist/binom/sdk-advertise/*"
+      ],
+      "@binom/sdk-advertise": [
+        "./dist/binom/sdk-advertise"
+      ],
+      "@binom/sdk-animation/*": [
+        "./dist/binom/sdk-animation/*"
+      ],
+      "@binom/sdk-animation": [
+        "./dist/binom/sdk-animation"
+      ],
+      "@binom/sdk-bundle-settings/*": [
+        "./dist/binom/sdk-bundle-settings/*"
+      ],
+      "@binom/sdk-bundle-settings": [
+        "./dist/binom/sdk-bundle-settings"
+      ],
+      "@binom/sdk-business/*": [
+        "./dist/binom/sdk-business/*"
+      ],
+      "@binom/sdk-business": [
+        "./dist/binom/sdk-business"
+      ],
+      "@binom/sdk-calendar/*": [
+        "./dist/binom/sdk-calendar/*"
+      ],
+      "@binom/sdk-calendar": [
+        "./dist/binom/sdk-calendar"
+      ],
+      "@binom/sdk-charts/*": [
+        "./dist/binom/sdk-charts/*"
+      ],
+      "@binom/sdk-charts": [
+        "./dist/binom/sdk-charts"
+      ],
+      "@binom/sdk-conten/*": [
+        "./dist/binom/sdk-content/*"
+      ],
+      "@binom/sdk-content": [
+        "./dist/binom/sdk-content"
+      ],
+      "@binom/sdk-core/*": [
+        "./dist/binom/sdk-core/*"
+      ],
+      "@binom/sdk-core": [
+        "./dist/binom/sdk-core"
+      ],
+      "@binom/sdk-forms/*": [
+        "./dist/binom/sdk-forms/*"
+      ],
+      "@binom/sdk-forms": [
+        "./dist/binom/sdk-forms"
+      ],
+      "@binom/sdk-image/*": [
+        "./dist/binom/sdk-image/*"
+      ],
+      "@binom/sdk-image": [
+        "./dist/binom/sdk-image"
+      ],
+      "@binom/sdk-layout/*": [
+        "./dist/binom/sdk-layout/*"
+      ],
+      "@binom/sdk-layout": [
+        "./dist/binom/sdk-layout"
+      ],
+      "@binom/sdk-location/*": [
+        "./dist/binom/sdk-location/*"
+      ],
+      "@binom/sdk-location": [
+        "./dist/binom/sdk-location"
+      ],
+      "@binom/sdk-nav/*": [
+        "./dist/binom/sdk-nav/*"
+      ],
+      "@binom/sdk-nav": [
+        "./dist/binom/sdk-nav"
+      ],
+      "@binom/sdk-picker/*": [
+        "./dist/binom/sdk-picker/*"
+      ],
+      "@binom/sdk-picker": [
+        "./dist/binom/sdk-picker"
+      ],
+      "@binom/sdk-prism/*": [
+        "./dist/binom/sdk-prism/*"
+      ],
+      "@binom/sdk-prism": [
+        "./dist/binom/sdk-prism"
+      ],
+      "@binom/sdk-privacy/*": [
+        "./dist/binom/sdk-privacy/*"
+      ],
+      "@binom/sdk-privacy": [
+        "./dist/binom/sdk-privacy"
+      ],
+      "@binom/sdk-tags-and-ratings/*": [
+        "./dist/binom/sdk-tags-and-ratings/*"
+      ],
+      "@binom/sdk-tags-and-ratings": [
+        "./dist/binom/sdk-tags-and-ratings"
+      ],
+      "@binom/sdk-theme/*": [
+        "./dist/binom/sdk-theme/*"
+      ],
+      "@binom/sdk-theme": [
+        "./dist/binom/sdk-theme"
+      ],
+      "@binom/sdk-user/*": [
+        "./dist/binom/sdk-user/*"
+      ],
+      "@binom/sdk-user": [
+        "./dist/binom/sdk-user"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -9,7 +125,6 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,

@@ -1,0 +1,35 @@
+<mat-toolbar [color]="color" class="bn-player-buttons-toolbar-{{buttonStyle}}">
+
+    <bn-player-buttons-round *ngIf="buttonStyle=='round'"
+    [translateTag]="translateTag" 
+    [enableToolTips]="enableToolTips"
+    [subButtons]="subButtons" 
+    [fullscreen]="fullscreen"
+    [audioOff]="audioOff" 
+    [paused]="paused"
+    [audioButton]="audioButton" 
+    [fullscreenButton]="fullscreenButton"
+    [gridButton]="gridButton" 
+    [disableBackward]="disableBackward"
+    [disableForward]="disableForward"
+    [disableFullscreen]="disableFullscreen"
+    (action)="fireAction($event)"
+    ></bn-player-buttons-round>
+
+    <bn-player-buttons-box *ngIf="buttonStyle=='box'"
+    [translateTag]="translateTag" 
+    [enableToolTips]="enableToolTips"
+    [subButtons]="subButtons" 
+    [fullscreen]="fullscreen"
+    [audioOff]="audioOff" 
+    [paused]="paused"
+    [audioButton]="audioButton" 
+    [fullscreenButton]="fullscreenButton"
+    [gridButton]="gridButton" 
+    [disableBackward]="disableBackward"
+    [disableForward]="disableForward"
+    [disableFullscreen]="disableFullscreen"
+    (action)="fireAction($event)"
+    ></bn-player-buttons-box>
+
+</mat-toolbar>
