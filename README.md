@@ -1,27 +1,42 @@
 # BinomSdks
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+changed to monorepo
 
-## Development server
+Reasons: 
+- easier to download the codebase
+- one ng update needed to upgrade dev
+- only one documentation and Demo App needed
+- less install space and installation needed on my machines :)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+use to open and watch all:
+https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-------------------------------------------------------------------------
 
-## Build
+## sdk-core 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## sdk-animation 
 
-## Running unit tests
+## sdk-layout
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## sdk-theme
 
-## Running end-to-end tests
+## sdk-user
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## sdk-privacy
 
-## Further help
+## sdk-tags-and-ratings
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## sdk-privacy
+
+## sdk-prism
+
+## sdk-picker
+
+## sdk-forms
+
+## sdk-location
+
+## sdk-image
+ uses sdk-core / sdk-theme / sdk-layout

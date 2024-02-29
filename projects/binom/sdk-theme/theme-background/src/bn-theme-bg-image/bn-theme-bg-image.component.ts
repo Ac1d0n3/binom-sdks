@@ -29,12 +29,14 @@ export class BnThemeBgImageComponent  {
   @Input() opacity: number = 0.5;
 
   style:string = '';
-  bgStyle: string = ' background-image: url(assets/theme/'+this.image+');  opacity:'+this.opacity+';'
+  bgStyle: string = ''
   constructor() { }
 
   ngOnInit(): void {
     this.setStyle();
-    this.bgStyle = ' background-image: url(assets/theme/'+this.image+');  opacity:'+this.opacity+';'
+    if(this.image != ''){
+      this.bgStyle = ' background-image: url(assets/sdk-theme/'+this.image+');  opacity:'+this.opacity+';'
+    }
   }
 
   setStyle(){

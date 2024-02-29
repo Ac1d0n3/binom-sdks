@@ -1,6 +1,6 @@
 <div class="bn-theme-background-back">
 <div  [style]="style">
-    <svg  style="height:100vh" class="starry-sky" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4000 3800">
+    <svg  style="width:100vw" class="starry-sky" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4000 3800">
         @for(star of starsAnimated; track $index){
             <path  
             [attr.cx]="star.x" [attr.transform]="'translate('+star.x+' '+star.y+') scale('+star.r+')'" 
