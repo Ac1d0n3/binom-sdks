@@ -19,7 +19,7 @@ export class BnThemeService {
   ) {
     this.registerDarkModeAutoSwitcher();
     this.getSettingsFromLocal();
-    this.bodyChangeTheme(this.data.activeTheme)
+    this.bodyChangeTheme(this.data.activeTheme);
   }
 
   customStyles:BnThemeCustomStyle[] = [];
@@ -89,6 +89,7 @@ export class BnThemeService {
   public registerThemes(themes:BnThemes[]){
     this.bnThemes = themes;
     this.setThemeVars();
+    this.updateData()
   }
 
   public setThemeSettings(data:BnThemeData){

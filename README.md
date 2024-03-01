@@ -39,4 +39,4 @@ https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-termi
 ## sdk-location
 
 ## sdk-image
- uses sdk-core / sdk-theme / sdk-layout
+

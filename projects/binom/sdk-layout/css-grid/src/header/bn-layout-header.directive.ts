@@ -46,7 +46,7 @@ export class BnLayoutHeaderDirective extends BnLayoutElementAnimateBaseDirective
     this.scrollElOffset = 0;
     this.scrollElOffset = (this.gridSvc.getElementOffset(this.current.wrapperId)) - (this.current.level === 0 ? 0:this.height);
     if(this.sticky) this.__checkIsFixed();
-    if(this.transparentAos) {this.renderUtil.toggleOnOff(this.scrollTop ===0 && this.gridSvc.isVisble(this.current,'preheader'), 'bnl-transparent-header-on','bnl-transparent-header-off');}
+    if(this.transparentAos) {this.renderUtil.toggleOnOff(this.scrollTop ===0  && this.gridSvc.isVisble(this.current,'preheader'), 'bnl-transparent-header-on','bnl-transparent-header-off');}
   }
   
   private __renderView():void{

@@ -44,7 +44,7 @@ div [class*="bnl-el-"], section [class*="bnl-el-"]{
          transition: background .8s ease-in;
 }
 
-.bnl-transparent-header-on .mat-toolbar, .bnl-transparent-header-off .mat-toolbar, .bn-transparent , .bnl-el-header .mat-toolbar{
+.bnl-transparent-header-on .mat-toolbar, .bnl-transparent-header-off .mat-toolbar, .bn-transparent {
     background: none !important;
 }
 

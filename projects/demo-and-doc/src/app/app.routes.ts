@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
+import { BnThemeService } from '@binom/sdk-theme/core';
 
-export const routes: Routes = [ {
+export const routes: Routes = [ 
+  {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
       path: 'home',

@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'bn-theme-switch',
   standalone: true,
   imports: [CommonModule, MatRadioModule, MatFormFieldModule,MatCheckboxModule,MatInputModule,MatSlideToggleModule, FormsModule,TranslateModule],
+  //providers:[BnThemeService],
   templateUrl: './bn-theme-switch.component.html',
   styleUrl: './bn-theme-switch.component.css',
   encapsulation: ViewEncapsulation.None
@@ -42,7 +43,7 @@ export class BnThemeSwitchComponent implements OnInit, OnDestroy {
 
     this.sub = this.bnThemeService.bnThemeData$.subscribe((data:BnThemeData) => {
       if(JSON.stringify(data) !== JSON.stringify(this.data))
-      this.data = data
+      this.data = data;
     });
 
     this.themes =  this.bnThemeService.bnThemes

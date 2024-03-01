@@ -1,0 +1,267 @@
+{
+    "autorun": true,
+    "autokill": true,
+    "terminals": [
+        {
+            "name": "app",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "code",
+            "color": "terminal.ansiGreen",
+            "commands": [
+                "cd projects/demo-and-doc",
+                "sleep 240",
+                "ng serve"
+            ]
+        },
+        {
+            "name": "core",
+            "description": "",
+            "icon": "beaker", 
+            "color": "terminal.ansiYellow",
+            "open": true,
+            "focus": true,
+            "commands": [
+                "cd projects/binom/sdk-core",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "theme",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow", 
+            "commands": [
+                "cd projects/binom/sdk-theme",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "animation",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-animation",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "layout",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-layout",
+                "sleep 120",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "user",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker", 
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-layout",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "forms",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker", 
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-forms",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "privacy",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker", 
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-privacy",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "tags-and-ratings",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker", 
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-tags-and-ratings",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "prism",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker", 
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-prism",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "picker",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker", 
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-picker",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "location",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker", 
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-location",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "image",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-bundle-settings",
+                "sleep 120",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "bundle",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-image",
+                "sleep 120",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "calendar",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-calendar",
+                "sleep 60",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "nav",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-nav",
+                "sleep 120",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "advertise",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-advertise",
+                "sleep 120",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "business",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-business",
+                "sleep 120",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "content",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-content",
+                "sleep 120",
+                "ng build --watch"
+            ]
+        },
+        {
+            "name": "charts",
+            "description": "",
+            "open": true,
+            "focus": false,
+            "icon": "beaker",
+            "color": "terminal.ansiYellow",
+            "commands": [
+                "cd projects/binom/sdk-charts",
+                "sleep 120",
+                "ng build --watch"
+            ]
+        }
+
+      
+    ]
+}
