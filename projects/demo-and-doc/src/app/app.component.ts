@@ -10,44 +10,67 @@ import { MatExpansionModule} from '@angular/material/expansion';
 import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { BnAnimateOnScrollComponent, BnAosViewPortDirective } from '@binom/sdk-animation/aos';
 
-import { BnCssGridModule } from '@binom/sdk-layout/css-grid';
+import { BnCssGridModule, BnGridConfigService } from '@binom/sdk-layout/css-grid';
 import { BnLoggerService } from '@binom/sdk-core/logger';
 
 import { BnSplitContentComponent, BnSplitContentItemDirective } from '@binom/sdk-layout/split-content';
-import { BnThemeSwitchMenuComponent } from '@binom/sdk-theme/theme-switch-menu';
+
 import { BnThemeService, themes } from '@binom/sdk-theme/core';
 import { BnThemeBackgroundComponent } from '@binom/sdk-theme/theme-background';
 import { BnRouterDataAndTitleService } from '@binom/sdk-core/router'; 
 
 import { AppHeaderComponent } from './main/app-header/app-header.component';
+import { BnLayoutService } from '@binom/sdk-layout/core';
+import { BnPrivacyService } from '@binom/sdk-privacy/core';
+import { BnTagsService } from '@binom/sdk-tags-and-ratings/tags-svc';
+import { BnUserStateService } from '@binom/sdk-user/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, RouterOutlet, RouterModule, BnAnimateOnScrollComponent,BnAosViewPortDirective, AppHeaderComponent,
-    TranslateModule, MatSidenavModule, MatExpansionModule, 
-    CdkScrollableModule, BnCssGridModule, BnSplitContentComponent, BnSplitContentItemDirective, BnThemeSwitchMenuComponent, BnThemeBackgroundComponent
+    CommonModule, 
+    RouterOutlet, 
+    RouterModule, 
+    BnAnimateOnScrollComponent, 
+    BnAosViewPortDirective, 
+    AppHeaderComponent,
+    BnCssGridModule, 
+    BnSplitContentComponent, 
+    BnSplitContentItemDirective, 
+    BnThemeBackgroundComponent,
+    TranslateModule, 
+    CdkScrollableModule, 
   ],
-  providers:[ BnRouterDataAndTitleService,BnThemeService],
+  providers:[ 
+    BnRouterDataAndTitleService, 
+    BnThemeService, 
+    BnLayoutService, 
+    BnGridConfigService, 
+    BnPrivacyService, 
+    BnTagsService, 
+    BnUserStateService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 
 export class AppComponent {
-  title = 'test';
+
   themes:any = themes;
+  router = inject(Router);
+  private bnThemeSvc = inject(BnThemeService);
+  private logger = inject(BnLoggerService);
+  private translate = inject(TranslateService);
+  private routerSvc = inject(BnRouterDataAndTitleService);
+
   constructor(){
     this.translate.addLangs(['en-US', 'de-DE']);
     this.translate.setDefaultLang( 'en-US' );
     this.logger.logLevel = -1;
     this.bnThemeSvc.registerThemes(this.themes);
+    this.routerSvc.appTitle = 'BN-SDKS';
   }
-  router = inject(Router);
-  private bnThemeSvc = inject(BnThemeService);
-  private logger = inject(BnLoggerService);
-  private translate = inject(TranslateService);
-
+ 
   preheader:boolean = true;
   sidebarleft:boolean = false;
   sidebarright:boolean = false;

@@ -11,12 +11,13 @@
 @import '../../../dist/binom/sdk-core/styles/core.scss';
 @import '../../../dist/binom/sdk-core/styles/material-icons.scss';
 @import '../../../dist/binom/sdk-layout/styles/layout.scss';
+@import '../../../dist/binom/sdk-theme/styles/global-theme-tpl.scss';
+@import '../../../dist/binom/sdk-theme/styles/global-mat-fix.scss';
 
 @import '../../../dist/binom/sdk-theme/styles/themes/binom-legacy/theme.scss';
+
 @import '../../../dist/binom/sdk-theme/styles/themes/nature-one/theme.scss';
 @import '../../../dist/binom/sdk-theme/styles/themes/nature-two/theme.scss';
 @import '../../../dist/binom/sdk-theme/styles/themes/blue-sky/theme.scss';
 
 
-@import '../../../dist/binom/sdk-theme/styles/global-theme-tpl.scss';
-@import '../../../dist/binom/sdk-theme/styles/global-mat-fix.scss';
