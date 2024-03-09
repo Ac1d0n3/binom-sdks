@@ -1,0 +1,33 @@
+<div style="padding:0px 10px 10px 10px">
+    
+    @if(!isSub) {
+        <h2 class="accent-color">
+            <i class="fas fa-cube"></i> {{title}}
+        </h2>
+        
+    } 
+    @else  {
+        <h3 class="primary-color">
+            <i class="fas fa-puzzle-piece"></i> {{title}}
+        </h3>
+    }
+
+
+<section class="comp-demo" #projected> <ng-content ></ng-content></section>
+
+@if(code !== '') {
+    <bn-prism-box title=""  [language]="language" itemId="foo" showLanguage [code]="code"></bn-prism-box>
+}
+
+<section class="comp-conf">
+    <div class="comp-inputs">
+
+    </div>
+    <div class="comp-outputs">
+
+    </div>
+    <div class="comp-svcs">
+
+    </div>
+</section>
+</div>

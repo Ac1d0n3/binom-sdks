@@ -19,9 +19,6 @@ import 'prismjs/components/prism-basic';
 import 'prismjs/components/prism-vbnet';
 import 'prismjs/components/prism-c';
 
-
-
-
 declare var Prism: any;
 
 @Injectable({
@@ -89,5 +86,23 @@ export class BnPrismService {
     return highlightedCode
   }
 
+  encodeVal(value: HTMLElement | string):string{
+    value = value.toString()
+    return value.replace(/[\u00A0-\u9999<>\&]/g, (i:any) => '&#'+i.charCodeAt(0)+';');
+  }
+
+  decodeVal(value:HTMLElement | string){
+    
+  }
+
+  removeNg(value:HTMLElement | string):string{
+    value = value.toString()
+    return value.replace('<!--container--><!--container-->','')
+    .replace(/(_ng(\S+)|ng(\S+)|class)=["']?((?:.(?!["']?\s+(?:\S+)=|\s*\/?[>"']))+.|)["']/gmi,'')
+  }
+
+  ngCodePrepare(value:HTMLElement | string):string {
+    return this.encodeVal(this.removeNg(value));
+  }
   
 }

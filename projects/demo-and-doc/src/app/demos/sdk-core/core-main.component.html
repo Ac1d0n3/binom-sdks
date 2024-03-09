@@ -1,0 +1,10 @@
+<section bnLayoutWrapper="coremain" parent="root" [calcHeights]="true" [grid]="true" cdkScrollable>
+
+  <app-sdk-header bnLayoutHeader height="50" fullWidthContent="none" ></app-sdk-header>
+  <app-sdk-nav [data]="data" bnLayoutSidebar cdkScrollable  class="content-bg" width="300"></app-sdk-nav>
+
+  <section bnLayoutContent cdkScrollable class="content-bg">
+    <router-outlet #outle="outlet"></router-outlet>
+  </section>
+
+</section>

@@ -1,0 +1,24 @@
+<button type="button"  mat-button style="width:100%;justify-content: flex-start;" 
+[routerLink]="['./home']"> 
+   Info and Install
+</button>
+    
+<mat-accordion>
+    @for (item of data; track $index) {
+        <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+            {{item.title}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div style="display: grid;grid-template-columns: auto;">
+            @for (subitem of item.data; track $index) {
+                <button style="justify-content: flex-start;"  type="button" mat-button 
+                [routerLink]="['./'+item.title+'/'+subitem]">
+                    {{subitem}}
+                </button>
+            }
+        </div>
+        </mat-expansion-panel>
+    }
+</mat-accordion>

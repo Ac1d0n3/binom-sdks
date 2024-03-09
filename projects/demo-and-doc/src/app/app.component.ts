@@ -71,12 +71,12 @@ export class AppComponent {
     this.routerSvc.appTitle = 'BN-SDKS';
   }
  
-  preheader:boolean = true;
+  preheader:boolean = false;
   sidebarleft:boolean = false;
   sidebarright:boolean = false;
   toggleIconSidebar:boolean = false;
   precontent:boolean = true;
-  footer:boolean = true;
+  footer:boolean = false;
 
   
 }

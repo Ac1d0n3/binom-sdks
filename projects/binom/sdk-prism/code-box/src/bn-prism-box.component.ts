@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component,Input } from '@angular/core';
 import { BooleanInput,coerceBooleanProperty } from '@angular/cdk/coercion';
 import { BnPrismDirective, BnPrismService } from '@binom/sdk-prism/core';
 
@@ -26,7 +26,7 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 export class BnPrismBoxComponent {
   private sub!: Subscription;
   @Input() language: string = 'javascript';
-  @Input() code: string = '';
+  
   @Input() value:string = '';
   @Input() highlightLine:any = '';
   @Input() tooltipTag:string = '';
@@ -42,6 +42,14 @@ export class BnPrismBoxComponent {
 
     } else this._toggle = coerceBooleanProperty(value);
   }
+
+  private _code:string = '';
+  get code():string {return this._code} 
+  @Input() set code(value: string){
+    this._code = value;
+   
+  } 
+  
 
   private _addLineNumbers: boolean = true;
   get addLineNumbers():boolean {return this._addLineNumbers}
@@ -86,7 +94,8 @@ export class BnPrismBoxComponent {
   constructor(
     private highlightSvc: BnPrismService,
     //private translateService: TranslateService,
-    private routerData:BnRouterDataAndTitleService
+    private routerData:BnRouterDataAndTitleService,
+    private cdrf: ChangeDetectorRef
   ) { }
 
   doCopy:string = '';
@@ -102,7 +111,11 @@ export class BnPrismBoxComponent {
         }, 10);
       }
    });
+
+   //console.log(this.code)
   }
+
+  
 
   change(){
     this.routerData.updateFragmentById(this.itemId, this.highlightLine)

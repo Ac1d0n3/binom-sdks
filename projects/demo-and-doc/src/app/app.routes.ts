@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { BnThemeService } from '@binom/sdk-theme/core';
+
 
 export const routes: Routes = [ 
   {
@@ -13,4 +13,14 @@ export const routes: Routes = [
         breadcrumb: 'breadcrumb.home'
       },
       loadComponent:  () => import('./home/home.component').then(m => m.HomeComponent)
-  }];
+  },
+  {
+    path: 'sdk-core',
+    data:{
+      breadcrumb: 'breadcrumb.sdkcore'
+    },
+   //loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
+    loadChildren:  () => import('./demos/sdk-core/core-main.routes').then(m => m.sdkCoreRoutes),
+   
+  }
+];
