@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,10 +18,11 @@ import { BnParamFilterService } from '../bn-param-filter.service';
 })
 export class BnParamFilterMenuComponent implements OnInit, OnDestroy {
   private sub!: Subscription;
-
+  @HostBinding('class') classes = 'bn-param-filter-menu';
   @Input() data!:BnParamFilters;
   @Input() translateTag: string = '';
-  @Input() badgeColor:any = 'primary'
+  @Input() badgeColor:any = 'primary';
+  @Input() badgeSize:any = 'medium';
   private _enableToolTips:boolean = false;
   get enableToolTips():boolean{ return this._enableToolTips; }
   @Input() set enableToolTips(val:BooleanInput){ this._enableToolTips = coerceBooleanProperty(val); }
@@ -29,6 +30,10 @@ export class BnParamFilterMenuComponent implements OnInit, OnDestroy {
   private _disabled:boolean = false;
   get disabled():boolean{ return this._disabled; }
   @Input() set disabled(val:BooleanInput){ this._disabled = coerceBooleanProperty(val); }
+
+  private _showAlways:boolean = false;
+  get showAlways():boolean{ return this._showAlways; }
+  @Input() set showAlways(val:BooleanInput){ this._showAlways = coerceBooleanProperty(val); }
 
   constructor(private filterService: BnParamFilterService, private cdr:ChangeDetectorRef) { }
 

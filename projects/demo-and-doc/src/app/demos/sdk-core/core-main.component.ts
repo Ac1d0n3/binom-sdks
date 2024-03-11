@@ -5,6 +5,7 @@ import { sdkDemos } from './sdk-core-demos.data';
 import { SdkNavComponent } from '../../shared/sdk-nav/sdk-nav.component';
 import { SdkHeaderComponent } from '../../shared/sdk-header/sdk-header.component';
 import { BnCssGridModule } from '@binom/sdk-layout/css-grid';
+import { BnAnimationService } from '@binom/sdk-animation/animation-timeout';
 
 
 @Component({

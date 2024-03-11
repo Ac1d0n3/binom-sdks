@@ -1,5 +1,15 @@
-<bn-info-box icon="fas fa-info-circle" ></bn-info-box>
+<app-doc-comp title="bnInfoBox">
+   
+</app-doc-comp>
 
-<bn-info-box translateKey="" icon="">
-    <img style="height:100px" src="../../../assets/error-page-svgrepo-com.svg" />
-</bn-info-box>
+<section bnGridBlock [columns]="2" [minColumnWidth]="500">
+    <app-doc-comp isSub title="Default" [height]="200" >
+        <bn-info-box icon="fas fa-info-circle" ></bn-info-box>
+    </app-doc-comp>
+    
+    <app-doc-comp isSub title="with Content" useInner  [height]="200" >
+        <bn-info-box translateKey="" icon="">
+            <img style="height:100px" src="./assets/error-page-svgrepo-com.svg" />
+        </bn-info-box>
+    </app-doc-comp>
+</section>

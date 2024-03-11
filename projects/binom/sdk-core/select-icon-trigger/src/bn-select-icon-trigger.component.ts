@@ -82,9 +82,10 @@ export class BnSelectIconTriggerComponent implements OnInit {
   }
 
   onSelectChange(event:any){
-    if(this.alwaysOneSelected && this.currentSelected.length == 0)
+    if((this.alwaysOneSelected && this.currentSelected.length == 0) || !this.multiple)
       this.currentSelected = [this.data[0].name]
     this.selectedValues.emit(this.currentSelected)
+    
   }
 
   drop(event: CdkDragDrop<string[]>){

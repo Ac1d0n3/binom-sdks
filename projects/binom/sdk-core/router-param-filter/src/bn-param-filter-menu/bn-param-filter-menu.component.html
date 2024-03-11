@@ -1,9 +1,9 @@
-@if(curFilters.length>0){
-    <button [matTooltipDisabled]="!enableToolTips"
+@if(curFilters.length>0 || showAlways){
+    <button [matTooltipDisabled]="!enableToolTips" 
     matTooltip="{{translateTag+'tooltips.clearFilter' | translate}}"
     mat-icon-button [matMenuTriggerFor]="filtersMenue"
     [matBadge]="curFilters.length" [matBadgeColor]="badgeColor"
-    matBadgeSize="small" [disabled]="disabled" style="margin-right:10px;">
+    [matBadgeSize]="badgeSize" [disabled]="disabled || curFilters.length ===0" [matBadgeHidden]="curFilters.length ===0">
     <span class="material-icons-outlined bn-mat-icon-fix">
         filter_alt
         </span>

@@ -1,6 +1,6 @@
 
 import { MatToolbarModule } from '@angular/material/toolbar'
-import { BnTranslateSwitchMenuComponent } from '@binom/sdk-core/translate';
+import { BnTranslateSwitchComponent, BnTranslateSwitchMenuComponent } from '@binom/sdk-core/translate';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { Component } from '@angular/core';
@@ -18,7 +18,7 @@ import { BnThemeSwitchMenuComponent } from '@binom/sdk-theme/theme-switch-menu';
     CommonModule, TranslateModule,
     BnAnimateOnScrollComponent, BnAosViewPortDirective, BnTranslateSwitchMenuComponent, 
     BnThemeSwitchMenuComponent, BnLayoutSwitchMenuComponent,
-    MatButtonModule, MatToolbarModule,
+    MatButtonModule, MatToolbarModule, BnTranslateSwitchMenuComponent,
     CdkScrollableModule
   ],
   templateUrl: './app-header.component.html',

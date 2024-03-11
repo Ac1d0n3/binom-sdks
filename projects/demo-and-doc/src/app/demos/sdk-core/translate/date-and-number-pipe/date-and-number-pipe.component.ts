@@ -8,10 +8,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { BnPrismBoxComponent } from '@binom/sdk-prism/code-box';
 @Component({
   selector: 'app-date-and-number-pipe',
   standalone: true,
-  imports: [CommonModule, TranslateModule, BnTranslateSwitchMenuComponent,MatFormFieldModule, MatInputModule, MatDatepickerModule,FormsModule],
+  imports: [CommonModule, TranslateModule, BnTranslateSwitchMenuComponent,MatFormFieldModule, MatInputModule, MatDatepickerModule,FormsModule, BnPrismBoxComponent],
   providers: [
     DatePipe,
     {provide: DateAdapter, useClass: CustomDatePickerAdapter},
@@ -37,4 +38,15 @@ export class DateAndNumberPipeComponent {
     this.adapter.setLocale(this.langcode.substring(0, 2))
    
   }
+
+
+
+  code1 = ` import registerLocaleData from '&#64;angular/common';
+  import localeEn from '&#64;angular/common/locales/en';
+  import localeDe from '&#64;angular/common/locales/de';
+  import localeDeExtra from '&#64;angular/common/locales/extra/de';
+  registerLocaleData(localeEn, 'en');‚
+  registerLocaleData(localeDe, 'de', localeDeExtra);`;
+
+  code2 = `this.adapter.setLocale(this.langcode.substring(0, 2))`;
 }

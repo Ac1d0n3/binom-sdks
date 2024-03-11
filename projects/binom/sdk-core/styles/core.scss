@@ -102,6 +102,7 @@ html, body {
 }
 
 
+
 .bn-menu-formfield{
     padding: 10px  10px 0px 20px;
     margin-bottom: -10px
@@ -144,8 +145,24 @@ html, body {
 	100% { opacity: 0; }
 }
 
+.bn-param-filter-menu  .mat-badge-content{
+    left:80% !important;
+    bottom:80% !important;
+
+  }
 
 
+.bn-fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: fixed !important;
+    z-index: 9999999999!important;
+    top: 64px;
+    left: 0;
+    overflow: auto;
+    overscroll-behavior: none;
+    background-color: #111;
+  }
 /*TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
 
 

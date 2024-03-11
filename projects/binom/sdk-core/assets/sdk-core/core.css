@@ -145,3 +145,16 @@ html, body {
 /*TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version.*/
 
 /*# sourceMappingURL=core.css.map */
+
+
+.bn-fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed !important;
+  z-index: 9999999999!important;
+  top: 64px;
+  left: 0;
+  overflow: auto;
+  overscroll-behavior: none;
+  background-color: #111;
+}

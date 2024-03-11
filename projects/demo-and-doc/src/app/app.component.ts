@@ -24,6 +24,7 @@ import { BnLayoutService } from '@binom/sdk-layout/core';
 import { BnPrivacyService } from '@binom/sdk-privacy/core';
 import { BnTagsService } from '@binom/sdk-tags-and-ratings/tags-svc';
 import { BnUserStateService } from '@binom/sdk-user/core';
+import { BnAnimationService } from '@binom/sdk-animation/animation-timeout';
 
 @Component({
   selector: 'app-root',
@@ -46,6 +47,7 @@ import { BnUserStateService } from '@binom/sdk-user/core';
     BnRouterDataAndTitleService, 
     BnThemeService, 
     BnLayoutService, 
+    BnAnimationService,
     BnGridConfigService, 
     BnPrivacyService, 
     BnTagsService, 

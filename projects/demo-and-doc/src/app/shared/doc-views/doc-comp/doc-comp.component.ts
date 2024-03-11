@@ -27,10 +27,15 @@ export class DocCompComponent implements AfterViewInit {
   @Input() inputs:Inputs = [];
   @Input() outputs:Outputs = [];
 
+  @Input() height:number=0;
+
   @Input() code:string = '';
 
   private _noEncode: boolean = false; get noEncode(): boolean { return this._noEncode;}
   @Input() set noEncode(val: BooleanInput) { this._noEncode = coerceBooleanProperty(val); }
+
+  private _useInner: boolean = false; get useInner(): boolean { return this._useInner;}
+  @Input() set useInner(val: BooleanInput) { this._useInner = coerceBooleanProperty(val); }
 
   private _isSub: boolean = false; get isSub(): boolean { return this._isSub;}
   @Input() set isSub(val: BooleanInput) { this._isSub = coerceBooleanProperty(val); }
@@ -46,10 +51,15 @@ export class DocCompComponent implements AfterViewInit {
 
       if(!this.noEncode){
         const original = this.projectedContent.nativeElement as HTMLElement;
-        const inner = original.firstChild as HTMLElement;
-        let inStr = ''
-        if(inner){ inStr = inner.innerHTML.toString() }
-        this.code = this.prismSvc.ngCodePrepare(original.innerHTML.replace(inStr,''));
+        let val = original.innerHTML; 
+        if(!this.useInner){
+          const inner = original.firstChild as HTMLElement;
+          let inStr = ''
+          if(inner){ inStr = inner.innerHTML.toString() }
+          val = val.replace(inStr,'');
+        }
+       
+        this.code = this.prismSvc.ngCodePrepare(val );
       } 
       
       this.cdrf.detectChanges()

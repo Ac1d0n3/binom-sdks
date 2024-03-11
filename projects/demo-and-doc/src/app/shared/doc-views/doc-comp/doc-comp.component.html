@@ -1,4 +1,4 @@
-<div style="padding:0px 10px 10px 10px">
+<div style="padding:10px">
     
     @if(!isSub) {
         <h2 class="accent-color">
@@ -13,7 +13,7 @@
     }
 
 
-<section class="comp-demo" #projected> <ng-content ></ng-content></section>
+<section class="comp-demo" #projected [style.height.px]="height>0?height:null"> <ng-content ></ng-content></section>
 
 @if(code !== '') {
     <bn-prism-box title=""  [language]="language" itemId="foo" showLanguage [code]="code"></bn-prism-box>

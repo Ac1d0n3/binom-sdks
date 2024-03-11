@@ -12,8 +12,9 @@
  }
 
 .select-icon-trigger-wrapper .mat-badge-content {
-    margin-top: 5px;
-    margin-left: -2px;
+    margin-top: 7px;
+    margin-left: -20px !important;
+    top: 10px !important;
 }
 
 .select-icon-trigger-drag-preview{

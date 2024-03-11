@@ -40,7 +40,7 @@
 
 }
 
-.bn-search-filter .mat-badge-content,  bn-param-filter-menu .mat-badge-content{
+.bn-search-filter .mat-badge-content{
     top: 10px !important;
     right:0px !important
   }
@@ -48,10 +48,6 @@
 
 @media (min-width: 900px){
 
-    .bn-search-filter .mat-badge-content,  bn-param-filter-menu .mat-badge-content{
-      top: 3px !important;
-      right:0px !important
-    }
     .bn-search-wrapper{
       height:50px;
       max-width:none;
