@@ -4,11 +4,12 @@ import { BnTruncatePipe } from '@binom/sdk-core/pipes';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DocCompComponent } from '../../../../shared/doc-views/doc-comp/doc-comp.component';
 
 @Component({
   selector: 'app-truncate',
   standalone: true,
-  imports: [CommonModule, BnTruncatePipe, FormsModule,  MatFormFieldModule, MatInputModule],
+  imports: [CommonModule, BnTruncatePipe, FormsModule,  MatFormFieldModule, MatInputModule,DocCompComponent],
   templateUrl: './truncate.component.html',
   styleUrl: './truncate.component.scss'
 })

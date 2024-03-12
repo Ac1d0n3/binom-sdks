@@ -4,11 +4,12 @@ import { BnSearchFilterPipe } from '@binom/sdk-core/pipes';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DocCompComponent } from '../../../../shared/doc-views/doc-comp/doc-comp.component';
 
 @Component({
   selector: 'app-search-filter',
   standalone: true,
-  imports: [CommonModule, BnSearchFilterPipe, FormsModule,  MatFormFieldModule, MatInputModule],
+  imports: [CommonModule, BnSearchFilterPipe, FormsModule,  MatFormFieldModule, MatInputModule,DocCompComponent],
   templateUrl: './search-filter.component.html',
   styleUrl: './search-filter.component.scss'
 })

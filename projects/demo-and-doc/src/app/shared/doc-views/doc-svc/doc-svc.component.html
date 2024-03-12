@@ -1,1 +1,37 @@
-<p>doc-svc works!</p>
+<div style="padding:10px"><h2 class="accent-color">
+    <i class="fas fa-cube"></i> {{title}}
+</h2>
+
+<div>should run in root: {{rootSvc}}</div>
+<div style="margin-bottom: 20px;"><ng-content></ng-content></div>
+@if(methods.length > 0){
+    <section>
+        <h3>Methods</h3>
+        <table >
+            <tr >
+                <td class=" tableMain regular-border primary-color">name</td> <td class="tableMain regular-border primary-color">params</td>
+            </tr>
+            @for (item of methods; track item.name) {
+                <tr >
+                    <td class="tableMain regular-border">{{item.name}}</td> 
+                    <td class="tableMain regular-border">
+                        
+                        <table>
+                            @for (sub of item.params; track sub.name) {
+                                <tr>
+                                    <td style="width:50%">{{sub.name}}</td> 
+                                    <td>{{sub.type}}</td>
+                                </tr>
+                            }
+                        </table>
+                    
+                    </td>
+                </tr>
+            }
+        
+
+        </table>
+    </section>
+}
+   
+</div>

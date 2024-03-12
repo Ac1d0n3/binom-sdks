@@ -152,7 +152,7 @@ export const sdkCoreRoutes: Routes = [
             loadComponent:  () => import('./router/router-and-title-svc/router-and-title-svc.component').then(m => m.RouterAndTitleSvcComponent)
         },
         {
-            path: 'router/router-reuse',
+            path: 'router/router-reuse-svc',
             loadComponent:  () => import('./router/router-reuse-svc/router-reuse-svc.component').then(m => m.RouterReuseSvcComponent)
         },
     
@@ -160,7 +160,6 @@ export const sdkCoreRoutes: Routes = [
             path: 'help/help-svc',
             loadComponent:  () => import('./help/bn-help-svc/bn-help-svc.component').then(m => m.BnHelpSvcComponent)
         },
-    
     
         {
             path: 'help/help-switch',

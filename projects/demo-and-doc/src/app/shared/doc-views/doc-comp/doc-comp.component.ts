@@ -1,7 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ContentChild, AfterViewInit, ViewChild, ChangeDetectorRef, inject } from '@angular/core';
-import { MatToolbar } from '@angular/material/toolbar';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, Input, AfterViewInit, ViewChild, ChangeDetectorRef, inject } from '@angular/core';
 import { BnPrismBoxComponent } from '@binom/sdk-prism/code-box';
 import { BnPrismService } from '@binom/sdk-prism/core';
 import { UseSvc } from './use-svc';
@@ -13,7 +11,7 @@ import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 @Component({
   selector: 'app-doc-comp',
   standalone: true,
-  imports: [CommonModule, BnPrismBoxComponent, MatToolbar ],
+  imports: [CommonModule, BnPrismBoxComponent ],
   templateUrl: './doc-comp.component.html',
   styleUrl: './doc-comp.component.scss',
 })
@@ -23,13 +21,23 @@ export class DocCompComponent implements AfterViewInit {
  
   @Input() descr:string[] = [];
 
-  @Input() useSvc:UseSvc = [];
-  @Input() inputs:Inputs = [];
-  @Input() outputs:Outputs = [];
+  @Input() useSvc:UseSvc[] = [] as any;
+  @Input() inputs:Inputs[] = [] as any;
+  @Input() outputs:Outputs[] = [] as any;
 
   @Input() height:number=0;
 
-  @Input() code:string = '';
+  private _code:string = '';
+  get code(){return this._code}
+  @Input() set code(code:string){
+    this._code = this.prismSvc.encodeVal(code )
+  }
+
+  private _sampleData:string = '';
+  get sampleData(){return this._sampleData}
+  @Input() set sampleData(sampleData:string){
+    this._sampleData = this.prismSvc.encodeVal(sampleData)
+  }
 
   private _noEncode: boolean = false; get noEncode(): boolean { return this._noEncode;}
   @Input() set noEncode(val: BooleanInput) { this._noEncode = coerceBooleanProperty(val); }
@@ -59,7 +67,7 @@ export class DocCompComponent implements AfterViewInit {
           val = val.replace(inStr,'');
         }
        
-        this.code = this.prismSvc.ngCodePrepare(val );
+        this._code = this.prismSvc.ngCodePrepare(val );
       } 
       
       this.cdrf.detectChanges()

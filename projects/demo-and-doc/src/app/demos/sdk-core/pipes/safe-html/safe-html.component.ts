@@ -4,11 +4,12 @@ import { BnSafeHtmlPipe } from '@binom/sdk-core/pipes';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DocCompComponent } from '../../../../shared/doc-views/doc-comp/doc-comp.component';
 
 @Component({
   selector: 'app-safe-html',
   standalone: true,
-  imports: [CommonModule, BnSafeHtmlPipe, FormsModule,  MatFormFieldModule, MatInputModule],
+  imports: [CommonModule, BnSafeHtmlPipe, FormsModule,  MatFormFieldModule, MatInputModule, DocCompComponent],
   templateUrl: './safe-html.component.html',
   styleUrl: './safe-html.component.scss'
 })
