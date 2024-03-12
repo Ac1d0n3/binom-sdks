@@ -33,6 +33,8 @@ export class DocCompComponent implements AfterViewInit {
     this._code = this.prismSvc.encodeVal(code )
   }
 
+  @Input() hiddenContent:boolean = false;
+
   private _sampleData:string = '';
   get sampleData(){return this._sampleData}
   @Input() set sampleData(sampleData:string){
@@ -57,7 +59,7 @@ export class DocCompComponent implements AfterViewInit {
 
     if(this.code === ''){
 
-      if(!this.noEncode){
+      if(!this.noEncode && !this.hiddenContent){
         const original = this.projectedContent.nativeElement as HTMLElement;
         let val = original.innerHTML; 
         if(!this.useInner){

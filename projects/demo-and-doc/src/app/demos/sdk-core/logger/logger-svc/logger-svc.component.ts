@@ -10,5 +10,11 @@ import { DocSvcComponent } from '../../../../shared/doc-views/doc-svc/doc-svc.co
   styleUrl: './logger-svc.component.scss'
 })
 export class LoggerSvcComponent {
+data = [];
+/*
 
+doLog(logSource:BnLogSource, type:  'log' | 'info'  | 'warn' | 'debug' | 'error' = 'log' )<br>
+formatMsg(msg:BnLogMsg, logSource:BnLogSource, type:  'log' | 'info'  | 'warn' | 'debug' | 'error' = 'log'  )<br>
+
+*/
 }
