@@ -18,28 +18,29 @@ import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 export class DocCompComponent implements AfterViewInit {
   language:string = 'typescript';
   @Input() title:string = '';
- 
-  @Input() descr:string[] = [];
-
+  @Input() descr:string = '';
   @Input() useSvc:UseSvc[] = [] as any;
   @Input() inputs:Inputs[] = [] as any;
   @Input() outputs:Outputs[] = [] as any;
-
   @Input() height:number=0;
 
   private _code:string = '';
   get code(){return this._code}
   @Input() set code(code:string){
+    if(!this.noEncode)
     this._code = this.prismSvc.encodeVal(code )
+    else this._code = code; 
+    console.log(this.code)
   }
-
-  @Input() hiddenContent:boolean = false;
 
   private _sampleData:string = '';
   get sampleData(){return this._sampleData}
   @Input() set sampleData(sampleData:string){
     this._sampleData = this.prismSvc.encodeVal(sampleData)
   }
+
+  private _hiddenContent: boolean = false; get hiddenContent(): boolean { return this._hiddenContent;}
+  @Input() set hiddenContent(val: BooleanInput) { this._hiddenContent = coerceBooleanProperty(val); }
 
   private _noEncode: boolean = false; get noEncode(): boolean { return this._noEncode;}
   @Input() set noEncode(val: BooleanInput) { this._noEncode = coerceBooleanProperty(val); }
@@ -74,10 +75,6 @@ export class DocCompComponent implements AfterViewInit {
       
       this.cdrf.detectChanges()
     }
-   
-    console.log(this.isSub)
 
   }
-
-  
 }

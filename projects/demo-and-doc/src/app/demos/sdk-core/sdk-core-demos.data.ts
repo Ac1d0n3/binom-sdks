@@ -55,10 +55,7 @@ export const sdkDemos = [
     title: 'help',
     data: ['help-svc', 'help-switch']
   },
-  {
-    title: 'assets-and-styles',
-    data: ['core-scss', 'i18n','fonts','img']
-  },
+  
   {
     title: 'info',
     data: ['suffix-info', 'info-box', 'info-msg']

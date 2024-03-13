@@ -1,1 +1,25 @@
-<p>sdk-info works!</p>
+<div style="padding:10px">
+
+    <h1>{{sdk}} - V{{version}}</h1>
+    <bn-prism-box [code]="code" ></bn-prism-box>
+
+    @if(assets.length >0){
+        <section style="margin-top:10px">
+            <h2>include Asstes</h2>
+    
+            <ul>
+                @for (item of assets; track item) {
+                    <li>{{item}}</li>
+                }
+            </ul>
+    
+            to use the assets 
+            <h3>1. modify the tsconfig.json </h3>
+            <bn-prism-box [code]="code2" noEncode></bn-prism-box>
+
+            <h3>2. modify the angular.json </h3>
+            <bn-prism-box [code]="code3" noEncode></bn-prism-box>
+        </section>
+    }
+    
+</div>

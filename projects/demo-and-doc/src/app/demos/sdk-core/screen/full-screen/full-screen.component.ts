@@ -13,5 +13,9 @@ import { DocCompComponent } from '../../../../shared/doc-views/doc-comp/doc-comp
   styleUrl: './full-screen.component.scss'
 })
 export class FullScreenComponent {
-  fs:boolean = false
+  fs:boolean = false;
+
+  code=`<div  fullscreen #fullscreen="fullscreen" style="border:1px solid;">
+ ...
+</div>`;
 }

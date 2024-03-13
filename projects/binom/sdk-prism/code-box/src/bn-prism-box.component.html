@@ -32,7 +32,7 @@
     </mat-toolbar>
     <div class="bn-prism-box-code-wrapper" [hidden]="hidden" >
         <pre  id="{{itemId}}" [attr.data-line]="highlightLine" [class.linkable-line-numbers]="linkableLineNumbers">
-            <code bnPrismCode [language]="language" [toggle]="toggle" [innerHTML]="code | bnhighlight:searchText"></code>
+            <code [class.whitespaces]="!noWhitespaces" bnPrismCode [language]="language" [toggle]="toggle" [innerHTML]="code | bnhighlight:searchText"></code>
         </pre>   
     </div>
     @if(showLanguage){

@@ -47,15 +47,13 @@ export class BnPrismBoxComponent {
   get code():string {return this._code} 
   @Input() set code(value: string){
     this._code = value;
-   
   } 
   
-
   private _addLineNumbers: boolean = true;
   get addLineNumbers():boolean {return this._addLineNumbers}
   @Input() set addLineNumbers(value:BooleanInput){ this._addLineNumbers = coerceBooleanProperty(value);}
 
-  private _allowFullScreen: boolean = true;
+  private _allowFullScreen: boolean = false;
   get allowFullScreen():boolean {return this._allowFullScreen}
   @Input() set allowFullScreen(value:BooleanInput){ this._allowFullScreen = coerceBooleanProperty(value);}
 
@@ -67,7 +65,7 @@ export class BnPrismBoxComponent {
   get  copyToClipBoard():boolean {return this._copyToClipBoard}
   @Input() set  copyToClipBoard(value:BooleanInput){ this._copyToClipBoard = coerceBooleanProperty(value);}
 
-  private _showHideButton: boolean = true;
+  private _showHideButton: boolean = false;
   get  showHideButton():boolean {return this._showHideButton}
   @Input() set  showHideButton(value:BooleanInput){ this._showHideButton = coerceBooleanProperty(value);}
 
@@ -86,6 +84,10 @@ export class BnPrismBoxComponent {
   private _showLanguage: boolean = false
   get showLanguage():boolean {return this._showLanguage}
   @Input() set showLanguage(value:BooleanInput){ this._showLanguage = coerceBooleanProperty(value); }
+  
+  private _noWhitespaces: boolean = false
+  get noWhitespaces():boolean {return this._noWhitespaces}
+  @Input() set noWhitespaces(value:BooleanInput){ this._noWhitespaces = coerceBooleanProperty(value); }
   
 
   curLinesValue:string='';

@@ -1,16 +1,17 @@
 <div style="padding:10px">
     
-    @if(!isSub) {
-        <h2 class="accent-color">
-            <i class="fas fa-cube"></i> {{title}}
-        </h2>
-        
-    } 
-    @else  {
-        <h3 class="primary-color">
-            <i class="fas fa-puzzle-piece"></i> {{title}}
-        </h3>
-    }
+@if(!isSub) {
+<h2 class="accent-color">
+    <i class="fas fa-cube"></i> {{title}}
+</h2>
+
+} 
+@else  {
+<h3 class="primary-color">
+    <i class="fas fa-puzzle-piece"></i> {{title}}
+</h3>
+}
+<div>{{descr}}</div>
 
 @if(!hiddenContent) {
     <section class="comp-demo regular-border" #projected [style.height.px]="height>0?height:null"> <ng-content ></ng-content></section>
