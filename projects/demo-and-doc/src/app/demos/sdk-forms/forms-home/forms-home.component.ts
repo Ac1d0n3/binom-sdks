@@ -10,5 +10,5 @@ import { SdkInfoComponent } from '../../../shared/sdk-info/sdk-info.component';
 })
 export class FormsHomeComponent {
   sdk="sdk-forms";
-  assets = []
+  assets=['i18n/de-DE.json','i18n/en-US.json'];
 }

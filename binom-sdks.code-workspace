@@ -4,7 +4,13 @@
 			"path": "."
 		},
 		{
-			"path": "../binom-sdk-core"
+			"path": "../binom-web-legacy"
+		},
+		{
+			"path": "../../../../usr/local/var/www/binom-php"
+		},
+		{
+			"path": "../../../../usr/local/var/www/binom-php-legacy"
 		}
 	],
 	"settings": {}
