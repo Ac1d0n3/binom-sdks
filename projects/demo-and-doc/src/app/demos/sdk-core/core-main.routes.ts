@@ -4,15 +4,18 @@ import { Routes } from '@angular/router';
 export const sdkCoreRoutes: Routes = [ 
   {
     path: '',
+
     loadComponent:  () => import('./core-main.component').then(m => m.CoreMainComponent),
     children:[
         {
             path: '',
             redirectTo: 'home',
             pathMatch: 'full',
+  
           },
           {
               path: 'home',
+       
               data:{
                 breadcrumb: 'breadcrumb.home'
               },
@@ -20,6 +23,7 @@ export const sdkCoreRoutes: Routes = [
           },
           {
             path: 'pipes/debounce',
+  
             loadComponent:  () => import('./pipes/debounce/debounce.component').then(m => m.DebounceComponent)
         },
         {

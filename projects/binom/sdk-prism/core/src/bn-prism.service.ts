@@ -98,7 +98,7 @@ export class BnPrismService {
   removeNg(value:HTMLElement | string):string{
     value = value.toString()
     return value.replace('<!--container--><!--container-->','')
-    .replace(/(_ng(\S+)|ng(\S+)|class)=["']?((?:.(?!["']?\s+(?:\S+)=|\s*\/?[>"']))+.|)["']/gmi,'')
+    .replace(/(_ng(\S+)|ng(\S+)|class)=["']?((?:.(?!["']?\s+(?:\S+)=|\s*\/?[>"']))+.|)["']/gmi,'').replace('=""',' ')
   }
 
   ngCodePrepare(value:HTMLElement | string):string {

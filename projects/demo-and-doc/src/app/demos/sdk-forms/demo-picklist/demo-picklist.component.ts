@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BnPickListComponent } from '@binom/sdk-forms/picklist';
+import { DocCompComponent } from '../../../shared/doc-views/doc-comp/doc-comp.component';
 
 @Component({
   selector: 'app-demo-picklist',
   standalone: true,
-  imports: [CommonModule,BnPickListComponent],
+  imports: [CommonModule,BnPickListComponent,DocCompComponent],
   templateUrl: './demo-picklist.component.html',
   styleUrl: './demo-picklist.component.scss'
 })
@@ -31,7 +32,37 @@ export class DemoPicklistComponent{
     this.pickListPossible = [...data.possibleData];
     this.pickListSelected = [...data.selectedData];
   }
+
+  code = `<bn-picklist
+  [possibleData]="pickListPossible"
+  [selectedData]="pickListSelected"
+  [searchFields]="pickListSearchIn"
+  [currentSelected]="pickListActive"
+  [orderData]="pickListSearchIn"
+  [dataLoaded]="true"
+  [dataLoadedSelected]="true"
+  [multiple]= "true"
+  (pickListDataChange)="pickListeDataChange($event)"
+  ></bn-picklist>`;
  
+  code2 = ` <bn-picklist
+  [searchFields]="pickListSearchIn"
+  [currentSelected]="pickListActive"
+  [withHeader]="false"
+  [withSearch]="false"
+  [possibleData]="pickListPossible"
+  [selectedData]="pickListSelected"
+  [dataLoaded]="true"
+  [dataLoadedSelected]="true"
+  (pickListDataChange)="pickListeDataChange($event)">
+
+    <ng-template #picklistContent let-item>
+      <h3 style="color:orange;">{{ item.name }}</h3>
+      <p> with inside template</p>
+      <div [hidden]="!item.icon">  </div>
+    </ng-template>
+
+  </bn-picklist>`
   
 
 }

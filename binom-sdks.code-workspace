@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../binom-sdk-core"
+		}
+	],
+	"settings": {}
+}

@@ -6,12 +6,13 @@ import { UseSvc } from './use-svc';
 import { Inputs } from './inputs';
 import { Outputs } from './outputs';
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { BnAnimateOnScrollComponent } from '@binom/sdk-animation/aos';
 
 
 @Component({
   selector: 'app-doc-comp',
   standalone: true,
-  imports: [CommonModule, BnPrismBoxComponent ],
+  imports: [CommonModule, BnPrismBoxComponent, BnAnimateOnScrollComponent ],
   templateUrl: './doc-comp.component.html',
   styleUrl: './doc-comp.component.scss',
 })
@@ -30,7 +31,7 @@ export class DocCompComponent implements AfterViewInit {
     if(!this.noEncode)
     this._code = this.prismSvc.encodeVal(code )
     else this._code = code; 
-    console.log(this.code)
+   
   }
 
   private _sampleData:string = '';
@@ -55,6 +56,10 @@ export class DocCompComponent implements AfterViewInit {
   private prismSvc = inject(BnPrismService)
 
   @ViewChild('projected', { static: false }) projectedContent!:any;
+
+  private _noWhitespaces: boolean = false
+  get noWhitespaces():boolean {return this._noWhitespaces}
+  @Input() set noWhitespaces(value:BooleanInput){ this._noWhitespaces = coerceBooleanProperty(value); }
   
   ngAfterViewInit() {
 

@@ -19,8 +19,17 @@ export const routes: Routes = [
     data:{
       breadcrumb: 'breadcrumb.sdkcore'
     },
-   //loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
+  // loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
     loadChildren:  () => import('./demos/sdk-core/core-main.routes').then(m => m.sdkCoreRoutes),
+   
+  },
+  {
+    path: 'sdk-forms',
+    data:{
+      breadcrumb: 'breadcrumb.sdkcore'
+    },
+  // loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
+    loadChildren:  () => import('./demos/sdk-forms/forms.routes').then(m => m.routesForms),
    
   }
 ];

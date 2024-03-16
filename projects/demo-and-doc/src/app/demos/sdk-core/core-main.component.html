@@ -1,10 +1,10 @@
 <section bnLayoutWrapper="coremain" parent="root" [calcHeights]="true" [grid]="true" cdkScrollable>
 
-  <app-sdk-header bnLayoutHeader height="50" fullWidthContent="none" ></app-sdk-header>
-  <app-sdk-nav [data]="data" bnLayoutSidebar cdkScrollable  class="content-bg" width="300"></app-sdk-nav>
+  <app-sdk-header bnLayoutHeader height="50" [sdk]="sdk" fullWidthContent="none" ></app-sdk-header>
+  <app-sdk-nav sdk="sdk-core" [data]="data" bnLayoutSidebar cdkScrollable  class="content-bg" width="300"></app-sdk-nav>
 
-  <section bnLayoutContent cdkScrollable class="content-bg">
-    <router-outlet #outle="outlet"></router-outlet>
+  <section bnLayoutContent cdkScrollable class="content-bg" [@routerFadeIn]="routerFadeInValue">
+    <router-outlet #oo="outlet"></router-outlet>
   </section>
 
 </section>

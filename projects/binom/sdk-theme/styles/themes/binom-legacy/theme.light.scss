@@ -6,3 +6,11 @@
     background: none !important;
     color:#424242
 }
+
+.mat-mdc-form-field > .mat-mdc-text-field-wrapper{
+    background: none !important
+  }
+  
+.appnav  .mat-mdc-form-field:not(.bn-search) > .mat-mdc-text-field-wrapper *{
+    color:white  !important
+}

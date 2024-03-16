@@ -7,8 +7,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule} from '@angular/material/expansion';
-import { CdkScrollableModule } from '@angular/cdk/scrolling';
-import { BnAnimateOnScrollComponent, BnAosViewPortDirective } from '@binom/sdk-animation/aos';
+import { CdkScrollable, CdkScrollableModule } from '@angular/cdk/scrolling';
+import { BnAnimateOnScrollComponent, BnAnimateOnScrollService, BnAosViewPortDirective } from '@binom/sdk-animation/aos';
 
 import { BnCssGridModule, BnGridConfigService } from '@binom/sdk-layout/css-grid';
 import { BnLoggerService } from '@binom/sdk-core/logger';
@@ -24,7 +24,8 @@ import { BnLayoutService } from '@binom/sdk-layout/core';
 import { BnPrivacyService } from '@binom/sdk-privacy/core';
 import { BnTagsService } from '@binom/sdk-tags-and-ratings/tags-svc';
 import { BnUserStateService } from '@binom/sdk-user/core';
-import { BnAnimationService } from '@binom/sdk-animation/animation-timeout';
+import { routerFadeIn } from '@binom/sdk-animation/animation-router';
+
 
 @Component({
   selector: 'app-root',
@@ -41,25 +42,26 @@ import { BnAnimationService } from '@binom/sdk-animation/animation-timeout';
     BnSplitContentItemDirective, 
     BnThemeBackgroundComponent,
     TranslateModule, 
-    CdkScrollableModule, 
+    CdkScrollableModule, CdkScrollable
   ],
   providers:[ 
     BnRouterDataAndTitleService, 
     BnThemeService, 
     BnLayoutService, 
-    BnAnimationService,
+    BnAnimateOnScrollService,
     BnGridConfigService, 
     BnPrivacyService, 
     BnTagsService, 
     BnUserStateService],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  animations:[routerFadeIn]
 })
 
 export class AppComponent {
 
   themes:any = themes;
-  router = inject(Router);
+  
   private bnThemeSvc = inject(BnThemeService);
   private logger = inject(BnLoggerService);
   private translate = inject(TranslateService);

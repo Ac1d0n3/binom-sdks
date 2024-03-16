@@ -1,9 +1,7 @@
 
-.mat-mdc-form-field:not(.bn-search) > .mat-mdc-text-field-wrapper{
-    background: #424242 !important
-}
 
-.mat-mdc-menu-content, .mat-mdc-form-field:not(.bn-search) > .mat-mdc-text-field-wrapper{
-    color:white  
-}
 
+.mat-mdc-form-field > .mat-mdc-text-field-wrapper{
+    background: none !important
+  }
+  

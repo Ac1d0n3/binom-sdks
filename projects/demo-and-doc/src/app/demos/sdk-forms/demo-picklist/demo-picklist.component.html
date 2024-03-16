@@ -1,4 +1,19 @@
-<div style="height:200px;width:90%;">
+
+  <app-doc-comp title="bn-picklist" [code]="code">
+    <bn-picklist
+    [possibleData]="pickListPossible"
+    [selectedData]="pickListSelected"
+    [searchFields]="pickListSearchIn"
+    [currentSelected]="pickListActive"
+    [orderData]="pickListSearchIn"
+    [dataLoaded]="true"
+    [dataLoadedSelected]="true"
+    [multiple]= "true"
+    (pickListDataChange)="pickListeDataChange($event)"
+    ></bn-picklist>
+  </app-doc-comp>
+
+  <app-doc-comp title="with template" isSub [code]="code2">
     <bn-picklist
     [searchFields]="pickListSearchIn"
     [currentSelected]="pickListActive"
@@ -16,19 +31,5 @@
         <div [hidden]="!item.icon">  </div>
       </ng-template>
 
-    </bn-picklist></div>
-
-    <div style="height:200px;width:90%;margin-top:30px;">
-      <bn-picklist
-     
-      [possibleData]="pickListPossible"
-      [selectedData]="pickListSelected"
-      [searchFields]="pickListSearchIn"
-      [currentSelected]="pickListActive"
-      [orderData]="pickListSearchIn"
-      [dataLoaded]="true"
-      [dataLoadedSelected]="true"
-      [multiple]= "true"
-      (pickListDataChange)="pickListeDataChange($event)"
-      ></bn-picklist>
-    </div>
+    </bn-picklist>
+  </app-doc-comp>

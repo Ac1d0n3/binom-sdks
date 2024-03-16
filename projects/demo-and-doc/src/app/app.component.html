@@ -9,13 +9,12 @@
 
     <app-header bnLayoutHeader height="64"  fullWidthContent="none" transparentAos  shadow sticky></app-header>
 
-
     <section bnLayoutSidebar sticky cdkScrollable [iconSidebarToggle]="toggleIconSidebar" shadow iconSidebar [visible]="sidebarleft" >
       <div  class="sample-side-left">SIDEBAR</div>
     </section>
-
-    <section bnLayoutContent cdkScrollable >
-      <router-outlet #outlet="outlet"></router-outlet>
+   
+    <section bnLayoutContent cdkScrollable [@routerFadeIn]="o.isActivated ? o.activatedRoute : ''">
+      <router-outlet #o="outlet"></router-outlet>
     </section>
 
     <section bnLayoutSidebar="right" [visible]="sidebarright" cdkScrollable shadow>

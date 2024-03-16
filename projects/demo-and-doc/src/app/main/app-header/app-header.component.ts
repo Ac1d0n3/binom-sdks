@@ -10,6 +10,7 @@ import { CdkScrollableModule } from '@angular/cdk/scrolling';
 import { BnAnimateOnScrollComponent, BnAosViewPortDirective } from '@binom/sdk-animation/aos';
 import { BnLayoutSwitchMenuComponent } from '@binom/sdk-layout/layout-switch';
 import { BnThemeSwitchMenuComponent } from '@binom/sdk-theme/theme-switch-menu';
+import { AppNavComponent } from '../app-nav/app-nav.component';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,7 @@ import { BnThemeSwitchMenuComponent } from '@binom/sdk-theme/theme-switch-menu';
     BnAnimateOnScrollComponent, BnAosViewPortDirective, BnTranslateSwitchMenuComponent, 
     BnThemeSwitchMenuComponent, BnLayoutSwitchMenuComponent,
     MatButtonModule, MatToolbarModule, BnTranslateSwitchMenuComponent,
-    CdkScrollableModule
+    CdkScrollableModule, AppNavComponent
   ],
   templateUrl: './app-header.component.html',
   styleUrl: './app-header.component.scss'

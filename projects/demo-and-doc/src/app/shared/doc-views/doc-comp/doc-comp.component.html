@@ -19,12 +19,12 @@
 }
 
 @if(code !== '') {
-    <bn-prism-box title=""  [language]="language" showLanguage [code]="code"></bn-prism-box>
+    <bn-prism-box [noWhitespaces]="noWhitespaces" title=""  [language]="language" showLanguage [code]="code"></bn-prism-box>
 }
 
 @if(sampleData !== '' ) {
     <h3 style="margin-top:10px">Used sampledata</h3>
-    <bn-prism-box title=""  [language]="language" [code]="sampleData"></bn-prism-box>
+    <bn-prism-box [noWhitespaces]="noWhitespaces"  title=""  [language]="language" [code]="sampleData"></bn-prism-box>
 }
 
 <section class="comp-conf">

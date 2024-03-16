@@ -13,5 +13,7 @@ import { BnAnimateOnScrollComponent, BnAosViewPortDirective } from '@binom/sdk-a
   styleUrl: './info-box.component.scss'
 })
 export class InfoBoxComponent {
-
+ code = ` <bn-info-box translateKey="" icon="">
+ <img style="height:100px" src="./assets/error-page-svgrepo-com.svg" />
+</bn-info-box>`;
 }
