@@ -1,7 +1,11 @@
 import { Routes } from '@angular/router';
 import { bnAuthGuard, bnNoAuthGuard } from '@binom/sdk-user/guards';
 
-export const routes: Routes = [
+export const routesUser: Routes = [ 
+    {
+      path: '',
+      loadComponent:  () => import('./user-main.component').then(m => m.UserMainComponent),
+      children:[
     {
         path: '',
         redirectTo: 'home',
@@ -11,7 +15,6 @@ export const routes: Routes = [
         path: 'home',
         loadComponent:  () => import('./user-home/user-home.component').then(m => m.UserHomeComponent)
     },
-
     {
         path: 'core/user-state-svc',
         loadComponent:  () => import('./svc/svc.component').then(m => m.SvcComponent)
@@ -38,11 +41,9 @@ export const routes: Routes = [
         canActivate: [bnNoAuthGuard('/home')],
         loadComponent:  () => import('./login/login.component').then(m => m.LoginComponent)
     },
-
     {
         path: 'components/password',
         canActivate: [bnNoAuthGuard('/home')],
         loadComponent:  () => import('./password/password.component').then(m => m.PasswordComponent)
     },
-
-];
+]}];

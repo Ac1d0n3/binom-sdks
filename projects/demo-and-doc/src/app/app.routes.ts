@@ -55,6 +55,15 @@ export const routes: Routes = [
   // loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
     loadChildren:  () => import('./demos/sdk-tags-and-ratings/tags-and-ratings.routing').then(m => m.routesTagsAndRatings),
    
+  },
+  {
+    path: 'sdk-user',
+    data:{
+      breadcrumb: 'breadcrumb.sdkuser'
+    },
+  // loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
+    loadChildren:  () => import('./demos/sdk-user/user.routing').then(m => m.routesUser),
+   
   }
 
   

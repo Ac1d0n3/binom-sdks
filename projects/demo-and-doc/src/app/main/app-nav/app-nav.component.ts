@@ -24,6 +24,12 @@ export class AppNavComponent {
       label: 'sdk-core',
       url: 'sdk-core'
     },
+
+    {
+      label: 'sdk-user',
+      url: 'sdk-user'
+    },
+    
     {
       label: 'sdk-privacy',
       url: 'sdk-privacy'
