@@ -678,6 +678,12 @@
                 "input": "dist/binom/sdk-prism/assets",
                 "output": "assets"
               }
+              ,
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-picker/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",

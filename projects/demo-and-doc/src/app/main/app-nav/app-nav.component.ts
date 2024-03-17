@@ -25,8 +25,21 @@ export class AppNavComponent {
       url: 'sdk-core'
     },
     {
+      label: 'sdk-privacy',
+      url: 'sdk-privacy'
+    },
+    {
+      label: 'sdk-tags-and-ratings',
+      url: 'sdk-tags-and-ratings'
+    },
+    {
       label: 'sdk-forms',
       url: 'sdk-forms'
+    },
+
+    {
+      label: 'sdk-picker',
+      url: 'sdk-picker'
     }
   ];
 

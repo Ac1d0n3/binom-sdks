@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { BnRatingsComponent } from '@binom/sdk-tags-and-ratings/ratings';
 import { BnTagsService } from '@binom/sdk-tags-and-ratings/tags-svc';
+import { DocCompComponent } from '../../../shared/doc-views/doc-comp/doc-comp.component';
 
 @Component({
   selector: 'app-ratings',
   standalone: true,
-  imports: [CommonModule, BnRatingsComponent],
+  imports: [CommonModule, BnRatingsComponent,DocCompComponent],
   templateUrl: './ratings.component.html',
   styleUrl: './ratings.component.scss'
 })

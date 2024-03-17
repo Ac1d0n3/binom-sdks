@@ -4,11 +4,12 @@ import { BnTagsEditComponent } from '@binom/sdk-tags-and-ratings/tags-edit';
 import { BnTagsShowComponent } from '@binom/sdk-tags-and-ratings/tags-show';
 import { BnTagsShowEditComponent } from '@binom/sdk-tags-and-ratings/tags-show-edit';
 import { BnTagsService } from '@binom/sdk-tags-and-ratings/tags-svc';
+import { DocCompComponent } from '../../../shared/doc-views/doc-comp/doc-comp.component';
 
 @Component({
   selector: 'app-tags',
   standalone: true,
-  imports: [CommonModule, BnTagsShowEditComponent, BnTagsEditComponent, BnTagsShowComponent],
+  imports: [CommonModule, BnTagsShowEditComponent, BnTagsEditComponent, BnTagsShowComponent, DocCompComponent],
   templateUrl: './tags.component.html',
   styleUrl: './tags.component.scss'
 })
