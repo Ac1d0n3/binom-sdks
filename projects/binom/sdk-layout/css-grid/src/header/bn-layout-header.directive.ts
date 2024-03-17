@@ -58,7 +58,6 @@ export class BnLayoutHeaderDirective extends BnLayoutElementAnimateBaseDirective
     if(this.current.level === 0) {
      
       this.gridSvc.getHeaderAnimationConfig( this.animateConfig, this.current, this.fullWidth, this.curVals, this.curStates);
-      console.log(this.belongsToWrapper,this.elTag, this.animateConfig.width.from,this.animateConfig.width.to ,this.aniToggle)
       this.renderView(this.aniToggle);
     
     } else { // CHILD HEADERS

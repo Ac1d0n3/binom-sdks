@@ -67,6 +67,8 @@ export class AppComponent {
   private translate = inject(TranslateService);
   private routerSvc = inject(BnRouterDataAndTitleService);
 
+  private userSvc = inject(BnUserStateService);
+
   constructor(){
     this.translate.addLangs(['en-US', 'de-DE']);
     this.translate.setDefaultLang( 'en-US' );

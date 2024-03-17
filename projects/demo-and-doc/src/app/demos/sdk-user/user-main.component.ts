@@ -26,14 +26,22 @@ export class UserMainComponent  implements AfterViewInit {
         this.routerFadeInValue = event.url;
       });
   }
+ 
   data = [
 
     {
-      title: 'demo',
-      data: ['ratings', 'tags']
+      title: 'core',
+      data: ['user-state-svc', 'bnShowAuth', 'bnShowNotAuth', 'bnShowRoles']
+    },
+    {
+      title: 'guards',
+      data: ['BnAuthGuard', 'bnNotAuthGuard', 'bnRolesGuard']
+    },
+    {
+      title: 'components',
+      data: ['password','login-menu', 'profile-image']
     },
   ]
 
- 
   sdk = 'sdk-user';
 }
