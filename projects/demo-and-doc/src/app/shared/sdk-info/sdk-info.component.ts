@@ -14,7 +14,7 @@ export class SdkInfoComponent implements OnInit {
   @Input() sdk:string = '';
   @Input() version:string = '';
   @Input() assets:string[] = [];
-
+  @Input() depends:string[] = [];
 
   code:string = '';
   code2:string = '';
