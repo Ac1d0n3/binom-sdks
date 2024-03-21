@@ -23,10 +23,10 @@
     --bg-color-content: #fff;
     --tag-bg:   rgba(24, 24, 24, 0.12);
     --tag-font-color: #40424f;
-    --tag-bg-hover: $color-primary;
+    --tag-bg-hover: #{mat.get-color-from-palette($light-primary, 500)};
     --tag-font-hover:  #40424f;
     --tag-shadow: rgba(0, 0, 0, 0.25);
-    --tag-selected: $color-accent;
+    --tag-selected: #{mat.get-color-from-palette($light-accent, 500)};
     
     --outlines: #adadad;
     
@@ -73,10 +73,10 @@
 
     --tag-bg:  #adadad;
     --tag-font-color: #fff;
-    --tag-bg-hover: $color-primary;
+    --tag-bg-hover: #c7db51;
     --tag-font-hover:  #40424f;
     --tag-shadow: rgba(0, 0, 0, 0.25);
-    --tag-selected: $color-accent;
+    --tag-selected: #c7db51
 
     --outlines: #adadad;
 
@@ -97,6 +97,3 @@
     @import './theme.dark.scss';
    
 }
-
-
-

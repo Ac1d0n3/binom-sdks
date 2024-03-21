@@ -10,11 +10,12 @@ import { BnThemeBgCssClassComponent } from './bn-theme-bg-css-class/bn-theme-bg-
 import { BnThemeBgStarsComponent } from './bn-theme-bg-stars/bn-theme-bg-stars.component';
 import { BnThemeBgWavesComponent } from './bn-theme-bg-waves/bn-theme-bg-waves.component';
 import { BnThemeBgImageComponent } from './bn-theme-bg-image/bn-theme-bg-image.component';
+import { BnThemeBgGradientComponent } from './bn-theme-bg-gradient/bn-theme-bg-gradient.component';
 
 @Component({
   selector: 'bn-theme-background',
   standalone: true,
-  imports: [CommonModule, BnThemeBgCssClassComponent, BnThemeBgStarsComponent, BnThemeBgWavesComponent, BnThemeBgImageComponent],
+  imports: [CommonModule, BnThemeBgCssClassComponent, BnThemeBgStarsComponent, BnThemeBgWavesComponent, BnThemeBgImageComponent,BnThemeBgGradientComponent],
   templateUrl: './bn-theme-background.component.html',
   styleUrl: './bn-theme-background.component.css'
 })

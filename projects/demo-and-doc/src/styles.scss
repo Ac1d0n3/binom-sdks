@@ -13,16 +13,20 @@
 @import '../../../dist/binom/sdk-core/styles/core.scss';
 @import '../../../dist/binom/sdk-core/styles/material-icons.scss';
 @import '../../../dist/binom/sdk-layout/styles/layout.scss';
-@import '../../../dist/binom/sdk-theme/styles/global-theme-tpl.scss';
+
 @import '../../../dist/binom/sdk-theme/styles/global-mat-fix.scss';
 @import '../../../dist/binom/sdk-prism/styles/sdk-prism.scss';
 @import '../../../dist/binom/sdk-picker/styles/sdk-picker.scss';
+@import '../../../dist/binom/sdk-tags-and-ratings/styles/tags.scss';
 
 // Include all themes
 @import '../../../dist/binom/sdk-theme/styles/themes/binom-legacy/theme.scss';
 @import '../../../dist/binom/sdk-theme/styles/themes/nature-one/theme.scss';
 @import '../../../dist/binom/sdk-theme/styles/themes/nature-two/theme.scss';
 @import '../../../dist/binom/sdk-theme/styles/themes/blue-sky/theme.scss';
+
+@import '../../../dist/binom/sdk-theme/styles/global-theme-tpl.scss';
+@import '../../../dist/binom/sdk-tags-and-ratings/styles/tags-theme.scss';
 
 
 body { 

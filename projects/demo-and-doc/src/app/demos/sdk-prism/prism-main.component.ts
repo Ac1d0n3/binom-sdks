@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './prism-main.component.scss'
 })
 export class PrismMainComponent {
-
+  sidebar:boolean = true;
 }

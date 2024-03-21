@@ -1,9 +1,9 @@
 <bn-theme-background ></bn-theme-background>
 <section bnLayoutAppWrapper cdkScrollable >
 
-  <section bnLayoutWrapper="root" maxWidth="1400" centered  [calcHeights]="false" [grid]="true" cdkScrollable>
+  <section bnLayoutWrapper="root" maxWidth="1400" centered  [calcHeights]="calcHeights" [grid]="true" cdkScrollable>
 
-    <section bnLayoutPreHeader fullWidth [visible]="preheader" cdkScrollable class="preheader">
+    <section bnLayoutPreHeader fullWidth fullHeight [visible]="preheader" cdkScrollable class="preheader">
       HALLO WELT
     </section>
 
@@ -13,7 +13,8 @@
       <div  class="sample-side-left">SIDEBAR</div>
     </section>
    
-    <section bnLayoutContent cdkScrollable [@routerFadeIn]="o.isActivated ? o.activatedRoute : ''">
+    <section style="height:100%" bnLayoutContent cdkScrollable >
+      
       <router-outlet #o="outlet"></router-outlet>
     </section>
 

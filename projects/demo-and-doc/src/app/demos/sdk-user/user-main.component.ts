@@ -26,7 +26,7 @@ export class UserMainComponent  implements AfterViewInit {
         this.routerFadeInValue = event.url;
       });
   }
- 
+  sidebar:boolean = true;
   data = [
 
     {

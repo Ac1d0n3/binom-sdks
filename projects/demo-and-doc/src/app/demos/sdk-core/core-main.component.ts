@@ -31,5 +31,5 @@ export class CoreMainComponent implements AfterViewInit {
 
   data = sdkDemos;
   sdk = 'sdk-core';
-
+  sidebar:boolean = true;
 }

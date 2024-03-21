@@ -18,6 +18,7 @@ import { filter } from 'rxjs';
   animations:[routerFadeIn],
 })
 export class TagsAndRatingsMainComponent implements AfterViewInit {
+  sidebar:boolean = true;
   routerFadeInValue: string = '';
   private router = inject(Router)
   ngAfterViewInit() {

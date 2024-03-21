@@ -19,6 +19,7 @@ import { filter } from 'rxjs';
   animations:[routerFadeIn],
 })
 export class PickerMainComponent {
+  sidebar:boolean = true;
   routerFadeInValue: string = '';
   private router = inject(Router)
   ngAfterViewInit() {

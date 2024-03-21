@@ -17,7 +17,7 @@ $bgColor: #40424f;
 }
 
 .content-bg{
-background-color: rgba($bgColor ,0.5) ; 
+background-color: $bgColor  ; 
 }
 .mat-mdc-paginator{
 background: transparent !important

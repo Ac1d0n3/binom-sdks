@@ -27,6 +27,7 @@ export class PrivacyMainComponent implements AfterViewInit {
         this.routerFadeInValue = event.url;
       });
   }
+  sidebar:boolean = true;
   data = [
 
     {
@@ -35,7 +36,7 @@ export class PrivacyMainComponent implements AfterViewInit {
     },
     {
       title: 'components',
-      data: ['bn-privacy-switch','bn-privacy-content']
+      data: ['bn-privacy-switch']
     },
   ]
 

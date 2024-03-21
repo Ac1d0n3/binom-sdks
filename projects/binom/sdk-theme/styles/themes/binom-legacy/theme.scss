@@ -25,10 +25,10 @@
     --bg-color-content: #fff;
     --tag-bg:  rgba(24, 24, 24, 0.12);
     --tag-font-color: #424242;
-    --tag-bg-hover:  $color-primary;
-    --tag-font-hover:  #424242;
+    --tag-bg-hover:   #{mat.get-color-from-palette($light-accent, 500)};
+    --tag-font-hover:  #fff;
     --tag-shadow: rgba(0, 0, 0, 0.25);
-    --tag-selected: $color-primary;
+    --tag-selected:  #{mat.get-color-from-palette($light-accent, 500)};
     
     --outlines: #adadad;
     
@@ -73,7 +73,7 @@
     --tag-bg-hover:  rgba(24, 24, 24, 0.5);
     --tag-font-hover:  white;
     --tag-shadow: rgba(0, 0, 0, 0.25);
-    --tag-selected: $color-accent;
+    --tag-selected:  #{mat.get-color-from-palette($dark-accent, 500)};
     
     --outlines: #616161;
     

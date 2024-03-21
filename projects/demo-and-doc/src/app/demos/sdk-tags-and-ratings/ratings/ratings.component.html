@@ -1,7 +1,26 @@
-<bn-ratings [max]="5"></bn-ratings>
-<bn-ratings size="large" [max]="10"></bn-ratings>
-<bn-ratings color="warn" icontype="dot" disabled [max]="5" rating="2"></bn-ratings>
+<app-doc-comp title="bn-ratings" hiddenContent>
+   
+</app-doc-comp>
 
-<bn-ratings size="large" color="primary" icontype="box" [max]="5"></bn-ratings>
 
-<bn-ratings size="small" color="primary" icontype="box" [max]="5"></bn-ratings>
+<app-doc-comp isSub title="with max 5">
+    <bn-ratings [max]="5"></bn-ratings>
+</app-doc-comp>
+
+<app-doc-comp isSub title="Large" >
+    <bn-ratings size="large" [max]="10"></bn-ratings>
+</app-doc-comp>
+
+<app-doc-comp isSub title="colored with dots" >
+    <bn-ratings color="warn" icontype="dot" disabled [max]="5" rating="2"></bn-ratings>
+</app-doc-comp>
+
+<app-doc-comp isSub title="icontype" >
+    <bn-ratings size="large" color="primary" icontype="box" [max]="5"></bn-ratings>
+</app-doc-comp>
+
+<app-doc-comp isSub title="Small" >
+    <bn-ratings size="small" color="primary" icontype="box" [max]="5"></bn-ratings>
+
+
+</app-doc-comp>

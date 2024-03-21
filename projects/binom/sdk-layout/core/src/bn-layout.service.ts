@@ -36,7 +36,7 @@ export class BnLayoutService {
   public layoutInfo$:BehaviorSubject<BnLayoutInfo> = new BehaviorSubject({} as any);
   public layoutEvent$:BehaviorSubject<BnLayoutEvent> = new BehaviorSubject({} as any);
   public scrollInfo$:BehaviorSubject<BnLayoutScroll> = new BehaviorSubject({} as any);
-  public updateScroll(value: BnLayoutScroll): void { this.scrollInfo$.next(value); }
+  
   public layoutInfo!:BnLayoutInfo;
 
   private readonly viewportChange = this.viewPort.change().subscribe(() => this.ngZone.run(() => this.setLayoutInfo(true)));
@@ -53,17 +53,43 @@ export class BnLayoutService {
         breakpoint: this.getBreakPoints()
       }
     }
+
     if(updateEvent) {
       this.updateLayoutEvent('layoutInfoService', 'resize');
     }
+
     this.__logMsg('debug', {function:'setLayoutInfo', msg: 'resized', info:  this.layoutInfo })
     this.layoutInfo$.next(this.layoutInfo);
+  
+   
   }
 
-  public setScrollInfo(value:BnLayoutScroll):void{
-    this.scrollInfo$.next(value);
+  public getWindowHeight(){
+    return this.layoutInfo.window.height
   }
 
+  private scrollPositions: BnLayoutScroll[] = [];
+
+  private addOrUpdateScrollSource(value: BnLayoutScroll){
+    const check = this.scrollPositions.findIndex((obj:BnLayoutScroll) => obj.source === value.source);
+    if(check === -1) this.scrollPositions.push(value)
+    else {
+      this.scrollPositions[check].x = value.x
+      this.scrollPositions[check].y = value.y
+    }
+  }
+
+  getScrollPositionBySource(source:string):BnLayoutScroll|null{
+    const check = this.scrollPositions.findIndex((obj:BnLayoutScroll) => obj.source === source);
+    if(check !== -1) return  this.scrollPositions[check]
+    else return null
+  }
+
+  public updateScroll(value: BnLayoutScroll): void { 
+    this.addOrUpdateScrollSource(value);
+    this.scrollInfo$.next(value); 
+  }
+ 
   getInfo(){
     return this.layoutInfo
   }

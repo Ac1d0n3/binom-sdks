@@ -1,25 +1,23 @@
 
-
- <div style="height:500px" style="padding:10px">
+<div class="content-bg" style="padding:10px">
     <div bnAos="fadeIn">
-        <button  type="button"  mat-button style="width:100%;justify-content: flex-start;" 
+        <button  type="button"  mat-button style="width:280px;justify-content: flex-start;" 
         [routerLink]="['./home']"> 
            Info and Install
         </button>
     </div>
-    @for (item of data; track $index) {
-        <div style="margin-top:10px; font-size: 16px;" bnAos="fadeIn" class="primary-color"> 
+    @for (item of data; track item.url) {
+        <div style="margin-top:10px;width:270px; font-size: 16px;" bnAos="fadeIn" class="accent-color"> 
             #{{item.title}} 
         </div> 
-
-        <div bnAos="fadeIn"  style="display: grid;grid-template-columns: auto;" >
+        <div  style="display: grid;grid-template-columns: auto; width:270px" >
             @for (subitem of item.data; track $index) {
-                <button style="justify-content: flex-start;"  type="button" mat-button 
-                [routerLink]="['./'+item.title+'/'+subitem]">
+                <span bnAos="fadeIn">
+                <button style="justify-content: flex-start;width:100%"  type="button" mat-button 
+                [routerLink]="['.', item.title, subitem]">
                     {{subitem}}
-                </button>
+                </button></span>
             }
         </div>
     }
 </div>
-

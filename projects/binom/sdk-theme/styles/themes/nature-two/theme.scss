@@ -24,10 +24,11 @@
     --bg-color-content: #fff;
     --tag-bg:   rgba(24, 24, 24, 0.12);
     --tag-font-color: #40424f;
-    --tag-bg-hover: $color-primary;
+    --tag-bg-hover: #{mat.get-color-from-palette($light-primary, 500)};
     --tag-font-hover:  #40424f;
     --tag-shadow: rgba(0, 0, 0, 0.25);
-    --tag-selected: $color-accent;
+    --tag-selected: #{mat.get-color-from-palette($light-accent, 500)};
+    
     
     --outlines: #adadad;
     
@@ -67,7 +68,7 @@
 
     --text-color: #fff;
     --bg-color: #40424f;
-    --bg-color-content: #fff;
+    --bg-color-content:  #40424f;
 
     --tag-bg:  #adadad;
     --tag-font-color: #fff;

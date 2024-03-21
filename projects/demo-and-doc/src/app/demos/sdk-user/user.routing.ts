@@ -26,24 +26,24 @@ export const routesUser: Routes = [
 
     {
         path: 'guards/:id',
-        canActivate: [bnAuthGuard('/home')],
+        canActivate: [bnAuthGuard('/sdk-user/home')],
         loadComponent:  () => import('./guard-demo/guard-demo.component').then(m => m.GuardDemoComponent)
     },
 
     {
         path: 'components/profile-image',
-        canActivate: [bnNoAuthGuard('/home')],
+        canActivate: [bnNoAuthGuard('/sdk-user/home')],
         loadComponent:  () => import('./profile-image/profile-image.component').then(m => m.ProfileImageComponent)
     },
 
     {
         path: 'components/login-menu',
-        canActivate: [bnNoAuthGuard('/home')],
+        canActivate: [bnNoAuthGuard('/sdk-user/home')],
         loadComponent:  () => import('./login/login.component').then(m => m.LoginComponent)
     },
     {
         path: 'components/password',
-        canActivate: [bnNoAuthGuard('/home')],
+        canActivate: [bnNoAuthGuard('/sdk-user/home')],
         loadComponent:  () => import('./password/password.component').then(m => m.PasswordComponent)
     },
 ]}];

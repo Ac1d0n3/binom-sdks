@@ -34,7 +34,9 @@ export class BnPrismService {
   }
 
   highlightAll() {
-    if (isPlatformBrowser(this.platformId)) { Prism.highlightAll(); }
+    if (isPlatformBrowser(this.platformId)) { 
+      Prism.highlightAll(); 
+    }
   }
 
   highlightCode(code: string, language: string): string {

@@ -84,10 +84,10 @@ export const themes = [
         default: {
           disabled: false,
           type: 'wave',
-          colorLight: '#c7db51',
-          colorDark: '#c7db51',
-          colorLight2: '#222823',
-          colorDark2: '#3d3d3d',
+          colorLight: '#10cfc9',
+          colorDark: '#6a0048',
+          colorLight2: '#6a0048',
+          colorDark2: '#40424f',
         },
         onRoute: [
           {
@@ -96,8 +96,8 @@ export const themes = [
             values: {
               disabled: false,
               type: 'wave',
-              colorLight: '#c7db51',
-              colorDark: '#c7db51',
+              colorLight: '#10cfc9',
+              colorDark: '#6a0048',
               colorLight2: '#222823',
               colorDark2: '#3d3d3d',
             }
@@ -115,9 +115,9 @@ export const themes = [
           disabled: false,
           type: 'gradient',
           colorLight: '#fff',
-          colorDark: '#616161',
-          colorLight2: '#2b5393',
-          colorDark2: '#3d3d3d',
+          colorDark: '#526f89',
+          colorLight2: '#526f89',
+          colorDark2: '#1a1d2b',
         },
         
       },

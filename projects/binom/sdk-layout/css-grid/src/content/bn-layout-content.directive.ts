@@ -25,7 +25,7 @@ export class BnLayoutContentDirective extends BnLayoutElementBaseDirective {
      
       this.renderUtil.toggleHeight(this.gridSvc.checkCalcHeights(this.current), this.current.heights.content+'px','100%');
       if(this.gridSvc.checkCalcHeights(this.current))  {
-        this.renderUtil.setStyle('overflow','auto');
+        this.renderUtil.setStyle('overflow',this.current.parentId !== ''? 'auto':'visible');
       } else {
         this.renderUtil.setStyle('overflow','unset');
       }

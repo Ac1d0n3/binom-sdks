@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { BnAnimateOnScrollComponent } from '@binom/sdk-animation/aos';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sdk-nav',
   standalone: true,
-  imports: [ RouterModule, TranslateModule, MatButtonModule, BnAnimateOnScrollComponent],
+  imports: [ RouterModule, TranslateModule, MatButtonModule, BnAnimateOnScrollComponent,RouterLink],
   templateUrl: './sdk-nav.component.html',
   styleUrl: './sdk-nav.component.scss'
 })

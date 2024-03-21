@@ -7,10 +7,10 @@ import { BnLogMsg } from './log-msg.model';
 })
 export class BnLoggerService {
 
-  constructor() { }
+  constructor() { console.log('INIT LOGGER SVC') }
 
   doLogging:Boolean = true;
-  logSources:string[]= ['bnLayout'];
+  logSources:string[]= ['none'];
   detailed:Boolean = true;
   logLevel:number = 4 ;
 

@@ -90,30 +90,35 @@ export class BnLayoutSidebarDirective extends BnLayoutElementAnimateBaseDirectiv
     this.scrollElOffset = 0;
     this.scrollElOffset = this.gridSvc.getElementOffset(this.current.wrapperId, 0, true);
     if(this.sticky) this.__checkIsFixed();
+   
   }
   
   private __renderView(){
     if(!this.current) return;
-    if(this.curStates.fullScreenEvent){ this.aniToggle = !this.curStates.fullScreenEvent; }
-    else if(this.curStates.iconsSidebarEvent){ this.aniToggle = !this.curStates.iconsSidebarState; }
-    else this.aniToggle = !this.visible;
-
-    this.animateConfig = this.gridSvc.getSidebarAnimateConfig(this.visible,this.width,this.current,this.position,this.curVals,this.curStates);
    
-    if(this.isFixed){
-      this.renderUtil.setStyle('top', (this.current.elConfig.sidebars[this.position as keyof BnGridSidebars].inHeader? 0 : this.current.heights.header) + 'px');
-      this.renderUtil.setHeight(this.current.heights.wrapper - this.current.heights.header  );
-    } else {
-      this.renderUtil.removeStyle('top');
-      this.renderUtil.removeStyle('height');
-    }
+    
    
-    this.renderViewHelper(this.aniToggle);
-    this.renderView(this.aniToggle);
+      if(this.curStates.fullScreenEvent){ this.aniToggle = !this.curStates.fullScreenEvent; }
+      else if(this.curStates.iconsSidebarEvent){ this.aniToggle = !this.curStates.iconsSidebarState; }
+      else this.aniToggle = !this.visible;
+  
+      this.animateConfig = this.gridSvc.getSidebarAnimateConfig(this.visible,this.width,this.current,this.position,this.curVals,this.curStates);
+     
+      if(this.isFixed){
+        this.renderUtil.setStyle('top', (this.current.elConfig.sidebars[this.position as keyof BnGridSidebars].inHeader? 0 : this.current.heights.header) + 'px');
+        this.renderUtil.setHeight(this.current.heights.wrapper - this.current.heights.header  );
+      } else {
+        this.renderUtil.removeStyle('top');
+        this.renderUtil.removeStyle('height');
+      }
+     
+      this.renderViewHelper(this.aniToggle);
+      this.renderView(this.aniToggle);
+  
 
   }
 
-  protected override toggleVisible(){ this.__renderView() }
+  protected override toggleVisible(){  this.__renderView(); }
 
   /* ************************************************************************ 
       EVENT Handling
@@ -127,6 +132,12 @@ export class BnLayoutSidebarDirective extends BnLayoutElementAnimateBaseDirectiv
 
   protected override handleLayoutEvent(eventData:BnGridWrapperEvent):void {
     if(!this.current) return;
+
+    if(!this.gridSvc.checkGrid(this.current)) 
+      this.renderUtil.toggleVisible(this.visible); 
+    else
+      this.renderUtil.toggleVisible(true);
+
     if(this.sticky){ this.__viewUpdate(); }
     if(eventData.action === 'fullscreen'){ 
       this.__renderView();
@@ -137,6 +148,8 @@ export class BnLayoutSidebarDirective extends BnLayoutElementAnimateBaseDirectiv
     if(eventData.source === 'appwrapper' && eventData.action === 'resize'){ 
       this.__renderView();
     }
+
+  
   }
 
   protected animateItHelper(toggle: boolean) {

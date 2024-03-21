@@ -59,6 +59,7 @@ export class BnLayoutAppWrapperDirective {
 
   private __handleEvent(data: BnLayoutEvent) {
     if(data.lastCalledBy === 'layoutInfoService' && data.source === 'resize'){
+   
       this.gridSvc.wrapperEvent('all','all',0, 'appwrapper', 'resize');
     }
   }
@@ -74,7 +75,7 @@ export class BnLayoutAppWrapperDirective {
     this.subscriptions.push(
       fromEvent(this.el.nativeElement, 'scroll')
       .subscribe((scrollEvent:any) => {
-        this.layoutSvc.updateScroll({source:'bn-layout-app-wrapper',y: scrollEvent.target.scrollTop || 0, x: 0})
+        this.layoutSvc.updateScroll({source:'bn-layout-app-wrapper',y: scrollEvent.target.scrollTop || 0, x: scrollEvent.target.scrollLeft || 0})
       })
     )
    

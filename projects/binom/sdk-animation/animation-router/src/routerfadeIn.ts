@@ -15,7 +15,8 @@ import {
             opacity: 0,
             position: 'absolute',
             height: '100%',
-            width: '100%'
+            width: '100%',
+            zIndex: 500
           })
         ],
         { optional: true }
@@ -28,9 +29,10 @@ import {
             opacity: 1,
             position: 'absolute',
             height: '100%',
-            width: '100%'
+            width: '100%',
+            zIndex: 500
           }),
-          animate('0.2s', style({ opacity: 0 }))
+          animate('0.1s', style({ opacity: 0 }))
         ],
         { optional: true }
       ),
@@ -41,9 +43,10 @@ import {
             opacity: 0,
             position: 'relative',
             height: '100%',
-            width: '100%'
+            width: '100%',
+            zIndex: 500
           }),
-          animate('1.5s', style({ opacity: 1 }))
+          animate('1s', style({ opacity: 1 }))
         ],
         { optional: true }
       )

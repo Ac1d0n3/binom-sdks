@@ -29,7 +29,6 @@ div [class*="bnl-el-"], section [class*="bnl-el-"]{
 
 
 .bnl-transparent-header-on .mat-toolbar,.bnl-transparent-header-on {
-  
     overscroll-behavior: none;
     -webkit-transition: background .8s ease-out;
        -moz-transition: background .8s ease-out;
@@ -44,7 +43,7 @@ div [class*="bnl-el-"], section [class*="bnl-el-"]{
          transition: background .8s ease-in;
 }
 
-.bnl-transparent-header-on .mat-toolbar, .bnl-transparent-header-off .mat-toolbar, .bn-transparent {
+.bnl-transparent-header-on .mat-toolbar, .bn-transparent {
     background: none !important;
 }
 

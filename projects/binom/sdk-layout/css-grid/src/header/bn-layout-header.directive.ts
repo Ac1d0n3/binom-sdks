@@ -44,9 +44,11 @@ export class BnLayoutHeaderDirective extends BnLayoutElementAnimateBaseDirective
     if(!this.current) return;
     this.curVals = this.gridSvc.getWrapperCurVals(this.current,this.curVals);
     this.scrollElOffset = 0;
-    this.scrollElOffset = (this.gridSvc.getElementOffset(this.current.wrapperId)) - (this.current.level === 0 ? 0:this.height);
+    this.scrollElOffset = (this.gridSvc.getElementOffset(this.current.wrapperId));
+  
     if(this.sticky) this.__checkIsFixed();
-    if(this.transparentAos) {this.renderUtil.toggleOnOff(this.scrollTop ===0  && this.gridSvc.isVisble(this.current,'preheader'), 'bnl-transparent-header-on','bnl-transparent-header-off');}
+    let check = this.scrollTop > 0 || (!this.gridSvc.isVisble(this.current,'preheader'));
+    if(this.transparentAos) {this.renderUtil.toggleOnOff(check, 'bnl-transparent-header-off','bnl-transparent-header-on');}
   }
   
   private __renderView():void{
@@ -140,6 +142,8 @@ export class BnLayoutHeaderDirective extends BnLayoutElementAnimateBaseDirective
     this.renderUtil.setHeight(this.height);
     
     let zIndex = (this.current.parentId === '' ? 300:200) - (this.current.level * 2);
+
+    if(this.current.config.active.calcHeights) zIndex = 300;
     this.renderUtil.setStyle('z-index',zIndex.toString());
    
   }
@@ -159,7 +163,7 @@ export class BnLayoutHeaderDirective extends BnLayoutElementAnimateBaseDirective
   }
 
   private __checkIsFixed():void{
-    const cur = this.scrollTop >= this.scrollElOffset ? true: false;
+    const cur = this.scrollTop >= this.scrollElOffset && this.scrollElOffset !==0 ? true: false;
     if(cur !== this.isFixed){
       this.isFixed = cur;
     }

@@ -5,9 +5,16 @@ import {registerLocaleData} from '@angular/common';
 import localeEn from '@angular/common/locales/en';
 import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
+import { InMemoryScrollingFeature, InMemoryScrollingOptions, provideRouter, withInMemoryScrolling } from '@angular/router';
+
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localeDe, 'de', localeDeExtra);
+
+
+
+
+
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
 

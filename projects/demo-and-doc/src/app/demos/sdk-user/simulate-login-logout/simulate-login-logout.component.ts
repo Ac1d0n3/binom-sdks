@@ -13,7 +13,7 @@ import { DocCompComponent } from '../../../shared/doc-views/doc-comp/doc-comp.co
 })
 export class SimulateLoginLogoutComponent {
   constructor(private userSvc:BnUserStateService){
-
+    this.userSvc.isAuthenticated$.subscribe((data:any) => this.toggle = data)
   }
   toggle:boolean = false;
   loginSimulator(){

@@ -10,7 +10,8 @@ export const routes: Routes = [
   {
       path: 'home',
       data:{
-        breadcrumb: 'breadcrumb.home'
+        breadcrumb: 'breadcrumb.home',
+        preheader: true
       },
       loadComponent:  () => import('./home/home.component').then(m => m.HomeComponent)
   },
@@ -43,26 +44,36 @@ export const routes: Routes = [
     data:{
       breadcrumb: 'breadcrumb.sdkprivacy'
     },
-  // loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
     loadChildren:  () => import('./demos/sdk-privacy/privacy.routes').then(m => m.routesPrivacy),
-   
   },
   {
     path: 'sdk-tags-and-ratings',
     data:{
       breadcrumb: 'breadcrumb.sdktagsandratings'
     },
-  // loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
     loadChildren:  () => import('./demos/sdk-tags-and-ratings/tags-and-ratings.routing').then(m => m.routesTagsAndRatings),
-   
   },
   {
     path: 'sdk-user',
     data:{
       breadcrumb: 'breadcrumb.sdkuser'
     },
-  // loadComponent: () => import('./demos/sdk-core/core-main.component').then(m => m.CoreMainComponent),
     loadChildren:  () => import('./demos/sdk-user/user.routing').then(m => m.routesUser),
+  },
+  {
+    path: 'sdk-image',
+    data:{
+      breadcrumb: 'breadcrumb.sdkimage'
+    },
+    loadChildren:  () => import('./demos/sdk-image/image.routing').then(m => m.routesImage),
+   
+  },
+  {
+    path: 'sdk-calendar',
+    data:{
+      breadcrumb: 'breadcrumb.sdkcalendar'
+    },
+    loadChildren:  () => import('./demos/sdk-calendar/calendar.routing').then(m => m.routesCalendar),
    
   }
 

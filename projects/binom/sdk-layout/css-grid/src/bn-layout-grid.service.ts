@@ -126,11 +126,18 @@ export class BnLayoutGridService {
     return (
       this.gridInfo.alwaysGrid && !gridWrapper.config.noInheritGrid) || 
       (!gridWrapper.config.noInheritGrid && this.gridInfo.grid) || 
-      (gridWrapper.config.def.grid && gridWrapper.config.noInheritGrid)
+      (gridWrapper.config.active.grid && gridWrapper.config.noInheritGrid)
   }
 
   checkCalcHeights(gridWrapper:BnGridWrapper):boolean{
-    return (this.gridInfo.alwaysCalcHeights && !gridWrapper.config.noInheritCalcHeights) || (!gridWrapper.config.noInheritCalcHeights && this.gridInfo.calcHeights)  || (gridWrapper.config.def.calcHeights && gridWrapper.config.noInheritCalcHeights)  || (gridWrapper.config.active.calcHeights && !gridWrapper.config.noInheritCalcHeights)
+
+    if(this.gridInfo.alwaysCalcHeights && !gridWrapper.config.noInheritCalcHeights)
+    return true
+    else if(!gridWrapper.config.noInheritCalcHeights && this.gridInfo.calcHeights) 
+    return true
+    else if  (gridWrapper.config.def.calcHeights && gridWrapper.config.noInheritCalcHeights)  return true 
+    else if  (gridWrapper.config.active.calcHeights && !gridWrapper.config.noInheritCalcHeights) return true
+    else return false
   }
 
   isVisble(gridWrapper: BnGridWrapper, elTag:string):boolean{ 
@@ -462,7 +469,8 @@ export class BnLayoutGridService {
   calcHeights(gridWrapper: BnGridWrapper){
     this.__calcPreheaderHeight(gridWrapper);
     this.__calcPreContentHeight(gridWrapper);
-    let totalC = this.layoutSvc.layoutInfo.window.height - this.__calcContentTotal(gridWrapper.wrapperId);
+
+    let totalC = this.layoutSvc.getInfo().window.height - this.__calcContentTotal(gridWrapper.wrapperId);
     gridWrapper.heights.content = totalC -  (this.isVisble(gridWrapper,'precontent')?gridWrapper.heights.precontent : 0) ;
     if(!this.layoutSvc.isPhone()){
       gridWrapper.heights.content -= gridWrapper.config.offsetBottom;

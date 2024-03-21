@@ -10,5 +10,16 @@ import { DocSvcComponent } from '../../../shared/doc-views/doc-svc/doc-svc.compo
   styleUrl: './svc-demo.component.scss'
 })
 export class SvcDemoComponent {
-
+  data:any = [
+    {
+      name: 'setApiUrl',
+      params: [
+        {
+          name: 'url',
+          type: 'string'
+        }
+      ]
+    },
+   
+  ]
 }

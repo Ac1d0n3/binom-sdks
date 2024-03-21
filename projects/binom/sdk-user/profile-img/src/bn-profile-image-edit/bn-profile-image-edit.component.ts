@@ -134,18 +134,21 @@ export class BnProfileImageEditComponent implements OnInit, AfterViewInit, OnDes
   uploadAction(file: any): void {
     const formData: FormData = new FormData();
     formData.append('user_image', file);
-    this.http.post(`${this.baseUrl}${this.apiPath}`, formData)
+    if(this.apiPath !== ''){
+      this.http.post(`${this.baseUrl}${this.apiPath}`, formData)
       .pipe(take(1))
       .subscribe((data: any) => {
         this.imageUrl =  this.baseUrl.replace('/api/','') + data.image
         this.curMode = 'edit-help'
       });
+    } else  this.curMode = 'edit-help'
+  
   }
 
   transformAction(): void {
    
     const body = { user_image_config: this.transform };
-
+    if(this.apiPath !== ''){
     this.http.put(`${this.baseUrl}${this.apiPath}`, body)
       .pipe(take(1))
       .subscribe((data: any) => {
@@ -154,6 +157,7 @@ export class BnProfileImageEditComponent implements OnInit, AfterViewInit, OnDes
           this.onDone()
         }, 1000);
       });
+    } else this.curMode = 'saved';
   }
 
   setTransform(){ this.transform = ` translate(${this.imageX} ${this.imageY}) scale(${this.scale})`; }

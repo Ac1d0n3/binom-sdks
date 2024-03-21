@@ -1,12 +1,10 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ViewEncapsulation, inject } from '@angular/core';
+import {  Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
-import { BnTranslateSwitchMenuComponent } from '@binom/sdk-core/translate';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatExpansionModule} from '@angular/material/expansion';
+
 import { CdkScrollable, CdkScrollableModule } from '@angular/cdk/scrolling';
 import { BnAnimateOnScrollComponent, BnAnimateOnScrollService, BnAosViewPortDirective } from '@binom/sdk-animation/aos';
 
@@ -33,7 +31,6 @@ import { routerFadeIn } from '@binom/sdk-animation/animation-router';
   imports: [
     CommonModule, 
     RouterOutlet, 
-    RouterModule, 
     BnAnimateOnScrollComponent, 
     BnAosViewPortDirective, 
     AppHeaderComponent,
@@ -42,12 +39,11 @@ import { routerFadeIn } from '@binom/sdk-animation/animation-router';
     BnSplitContentItemDirective, 
     BnThemeBackgroundComponent,
     TranslateModule, 
-    CdkScrollableModule, CdkScrollable
+    CdkScrollableModule, CdkScrollable,
   ],
   providers:[ 
     BnRouterDataAndTitleService, 
     BnThemeService, 
-    BnLayoutService, 
     BnAnimateOnScrollService,
     BnGridConfigService, 
     BnPrivacyService, 
@@ -68,6 +64,7 @@ export class AppComponent {
   private routerSvc = inject(BnRouterDataAndTitleService);
 
   private userSvc = inject(BnUserStateService);
+  private layoutSvc = inject(BnLayoutService)
 
   constructor(){
     this.translate.addLangs(['en-US', 'de-DE']);
@@ -75,8 +72,17 @@ export class AppComponent {
     this.logger.logLevel = -1;
     this.bnThemeSvc.registerThemes(this.themes);
     this.routerSvc.appTitle = 'BN-SDKS';
+
+    this.routerSvc.routerData$.subscribe((data:any) => {
+      console.log(data)
+      this.calcHeights = data.activeRoute === '/home' ? false : true;
+      this.preheader = data.breadcrumbs[0]?.data?.preheader? data.breadcrumbs[0].data.preheader:false;
+    })
+
+  
   }
- 
+
+  calcHeights:boolean = false;
   preheader:boolean = false;
   sidebarleft:boolean = false;
   sidebarright:boolean = false;
