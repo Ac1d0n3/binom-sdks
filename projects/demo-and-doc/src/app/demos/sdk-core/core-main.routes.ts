@@ -70,7 +70,10 @@ export const sdkCoreRoutes: Routes = [
             path: 'ngx-translate-helper/translate-switch',
             loadComponent:  () => import('./translate/translate-switch/translate-switch.component').then(m => m.TranslateSwitchComponent)
         },
-    
+        {
+            path: 'ngx-translate-helper/multi-loader',
+            loadComponent:  () => import('./translate/multi-loader/multi-loader.component').then(m => m.MultiLoaderComponent)
+        },
         {
             path: 'ngx-translate-helper/date-and-numper-pipe',
             loadComponent:  () => import('./translate/date-and-number-pipe/date-and-number-pipe.component').then(m => m.DateAndNumberPipeComponent)

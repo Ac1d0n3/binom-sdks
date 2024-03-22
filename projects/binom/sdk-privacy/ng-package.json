@@ -3,7 +3,8 @@
   "dest": "../../../dist/binom/sdk-privacy",
   "lib": {
     "entryFile": "public-api.ts"
-  } ,"assets": [
+  } ,
+  "assets": [
     "./assets/**/*.*"
    ]
 }

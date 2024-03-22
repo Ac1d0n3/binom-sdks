@@ -10,5 +10,5 @@ import { SdkInfoComponent } from '../../../shared/sdk-info/sdk-info.component';
 })
 export class CoreHomeComponent {
   assets=['i18n/de-DE.json','i18n/en-US.json','core.css'];
-  
+  version = '1.1.6'
 }

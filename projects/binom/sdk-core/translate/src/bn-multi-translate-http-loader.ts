@@ -24,17 +24,22 @@ export class BnMultiTranslateHttpLoader implements TranslateLoader {
 
       return new HttpClient(this._handler).get(path).pipe(
         catchError((res) => {
-          if (typeof resource === 'object') {
-            console.group()
+          if (typeof resource === 'object' && !resource.optional) {
             console.error('Error in file:', path)
-            console.error(res)
-            console.groupEnd()
           }
           return of({})
         }),
       )
-    })
+    });
 
-    return forkJoin(requests).pipe(map((response) => deepmerge(...response)))
+    return forkJoin(requests).pipe(
+      map((responses) => {
+        const objectsToMerge = responses.filter(response => typeof response === 'object');
+        if (objectsToMerge.length > 0) {
+          return deepmerge(...objectsToMerge);
+        } else {
+          return {};
+        }
+      }));
   }
 }

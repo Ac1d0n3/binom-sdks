@@ -1,0 +1,11 @@
+bn-player-buttons-toolbar-round{
+    border-radius: 20px !important;
+}
+
+.bn-player-toolbar{
+
+    height: 48px !important;
+    width:220px !important;
+  
+    border-bottom-right-radius: 5px;
+  }

@@ -75,7 +75,22 @@ export const routes: Routes = [
     },
     loadChildren:  () => import('./demos/sdk-calendar/calendar.routing').then(m => m.routesCalendar),
    
+  },
+  {
+    path: 'sdk-layout',
+    data:{
+      breadcrumb: 'breadcrumb.sdklayout'
+    },
+    loadChildren:  () => import('./demos/sdk-layout/layout.routing').then(m => m.layoutRoutes),
+   
+  },
+  {
+    path: 'sdk-theme',
+    data:{
+      breadcrumb: 'breadcrumb.sdktheme'
+    },
+    loadChildren:  () => import('./demos/sdk-theme/theme.routing').then(m => m.themeRoutes),
+   
   }
-
   
 ];

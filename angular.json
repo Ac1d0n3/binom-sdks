@@ -690,6 +690,18 @@
                 "input": "dist/binom/sdk-user/assets",
                 "output": "assets"
               }
+              ,
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-forms/assets",
+                "output": "assets"
+              } 
+              ,
+              {
+                "glob": "**/*",
+                "input": "dist/binom/sdk-privacy/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/purple-green.css",

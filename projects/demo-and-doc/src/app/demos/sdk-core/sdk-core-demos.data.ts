@@ -5,7 +5,7 @@ export const sdkDemos = [
   },
   {
     title: 'ngx-translate-helper',
-    data: ['translate-switch', 'date-and-numper-pipe', 'custom-mat-paginator-intl']
+    data: ['translate-switch', 'date-and-numper-pipe','multi-loader', 'custom-mat-paginator-intl']
   },
   {
     title: 'icons',

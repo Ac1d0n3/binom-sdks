@@ -19,7 +19,7 @@ export function createTranslateLoader(_httpBackend: HttpBackend) {
   return new BnMultiTranslateHttpLoader(_httpBackend, [
     '/assets/i18n/', 
     '/assets/sdk-core/i18n/',
-   // '/assets/sdk-privacy/i18n/',
+    '/assets/sdk-privacy/i18n/',
     '/assets/sdk-theme/i18n/',
     '/assets/sdk-user/i18n/',
     '/assets/sdk-layout/i18n/',

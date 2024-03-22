@@ -31,5 +31,6 @@ export class CoreMainComponent implements AfterViewInit {
 
   data = sdkDemos;
   sdk = 'sdk-core';
+  version = '1.1.6';
   sidebar:boolean = true;
 }

@@ -30,6 +30,14 @@ export class AppNavComponent {
       url: 'sdk-core'
     },
     {
+      label: 'sdk-layout',
+      url: 'sdk-layout'
+    },
+    {
+      label: 'sdk-theme',
+      url: 'sdk-theme'
+    },
+    {
       label: 'sdk-user',
       url: 'sdk-user'
     },
@@ -56,7 +64,8 @@ export class AppNavComponent {
     {
       label: 'sdk-calendar',
       url: 'sdk-calendar'
-    }
+    },
+   
   ];
 
   navigateTo(value:string){

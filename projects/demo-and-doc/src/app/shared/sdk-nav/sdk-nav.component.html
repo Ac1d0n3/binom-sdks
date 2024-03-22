@@ -12,11 +12,11 @@
         </div> 
         <div  style="display: grid;grid-template-columns: auto; width:270px" >
             @for (subitem of item.data; track $index) {
-                <span bnAos="fadeIn">
+                <div bnAos="fadeIn">
                 <button style="justify-content: flex-start;width:100%"  type="button" mat-button 
                 [routerLink]="['.', item.title, subitem]">
                     {{subitem}}
-                </button></span>
+                </button></div>
             }
         </div>
     }

@@ -1,1 +1,10 @@
-<p>theme-main works!</p>
+<section bnLayoutWrapper="thememain" parent="root" [calcHeights]="true" [grid]="true" cdkScrollable>
+
+    <app-sdk-header (sidebar)="sidebar=$event"  bnLayoutHeader height="50" shadow [sdk]="sdk" fullWidthContent="none" ></app-sdk-header>
+    <app-sdk-nav [visible]="sidebar" shadow sdk="sdk-core" [data]="data" bnLayoutSidebar cdkScrollable  class="content-bg" width="300"></app-sdk-nav>
+  
+    <section shadow bnLayoutContent cdkScrollable class="content-bg" >
+      <router-outlet #oo="outlet"></router-outlet>
+    </section>
+  
+  </section>

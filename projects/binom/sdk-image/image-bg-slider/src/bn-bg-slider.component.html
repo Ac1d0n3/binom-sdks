@@ -1,6 +1,6 @@
 <ng-container *ngFor="let img of imageData; let i = index">
   <div *ngIf="i==curindex && !loading"  [@slideAnimation]="animationType"
-  [ngClass]="'mat-elevation-z3 galleryBGSlider div'+i"
+  [ngClass]="'mat-elevation-z3 bn-gallery-bg-slider div'+i"
   style="background: url({{img.url}});background-size:cover; "
   [style.width]="fullscreen? '100vw':''"
   [style.height]="fullscreen? '100vh':''"
@@ -8,8 +8,8 @@
   ></div>
 </ng-container>
 
-<div class="playerButtonsAndGrid">
-  <div class="playerButtons">
+<div class="player-buttons-grid">
+  <div class="player-buttons">
     <bn-player-buttons
     [paused]="paused"
     [disableBackward]="disableBackward"
@@ -26,5 +26,5 @@
 
 </div>
 
-<div *ngIf="imageData && imageData[curindex].title" class="bnImageSliderTitle">{{imageData[curindex].title}}</div>
-<div *ngIf="imageData && imageData[curindex].descr" class="bnImageSliderDescr">{{imageData[curindex].descr}}</div>
+<div *ngIf="imageData && imageData[curindex].title" class="bn-image-slider-title">{{imageData[curindex].title}}</div>
+<div *ngIf="imageData && imageData[curindex].descr" class="bn-image-slider-descr">{{imageData[curindex].descr}}</div>

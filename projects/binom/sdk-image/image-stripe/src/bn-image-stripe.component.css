@@ -1,0 +1,39 @@
+.bn-image-stripe-wrapper{
+    position: relative;
+    display:grid;
+    grid-template-columns: 50px auto 50px;
+    overflow: hidden;
+    height: auto;
+}
+
+.bn-image-stripe-content{
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bn-image-slider-left-space, .bn-image-slider-right-space{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.bn-image-stripe-thumbnail{
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+.bn-image-stripe-active{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.bn-image-stripe-thumbnail:hover{
+    opacity: 1;
+}

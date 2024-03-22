@@ -25,11 +25,9 @@ export class BnPrivacySwitchComponent implements OnInit, OnDestroy {
     });
     this.subscriptions.push(sub1);
   }
-
   changePrivacy(){
     this.privacySvc.setValues(this.privacyInfo);
     this.privacySvc.setSettingsToLocal();
   }
-
   ngOnDestroy(){ this.subscriptions.forEach(subscription => subscription.unsubscribe());}
 }

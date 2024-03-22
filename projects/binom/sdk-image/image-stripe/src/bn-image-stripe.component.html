@@ -1,15 +1,16 @@
-<div class="imageStripeWrapper content-bg mat-evaluation-z3" [style.height.px]="imageHeight +margin*2">
-    <div class="bnImageSliderLeftSpace"  [style.paddingTop.px]="imageHeight/2-10">
+<div class="bn-image-stripe-wrapper content-bg mat-evaluation-z3" [style.height.px]="imageHeight +margin*2">
+    <div class="bn-image-slider-left-space"  [style.paddingTop.px]="imageHeight/2-10">
       <button mat-icon-button class="bn-button-fa"
         (click)="fireAction('backward')">
         <i class="fas fa-angle-double-left"></i>
       </button>
     </div>
     
-    <div class="bnImageStripeContent" #imageStripe >
+    <div class="bn-image-stripe-content" #imageStripe >
      <div [style.width.px]="(imageData.length+1)*imageSize" >
-      <div *ngFor="let img of imageData; let i = index"  
-        class="imageStripeThumbnail mat-evaluation-z3 " 
+      @for(img of imageData;  track img.url; let i = $index){
+        <div   
+        class="bn-image-stripe-thumbnail mat-evaluation-z3 " 
         style="background: url({{img.url}});background-size:cover; " 
         [style.opacity]="i == activeImage?1:''"
         [style.marginTop.px]="margin"
@@ -17,14 +18,15 @@
         [style.width.px]="imageSize" 
         [style.height.px]="imageHeight"
         (click)="selectImage(img)">
-    
-        <div *ngIf="i == activeImage" class="bnImageStripeActive color-accentbg"></div>
-    
-      </div>
+        @if(i == activeImage){
+          <div class="bn-image-stripe-active color-accentbg"></div>
+        }
+        </div>
+      }
      </div>
     </div>
     
-    <div class="bnImageSliderRightSpace" [style.paddingTop.px]="imageHeight/2-10">
+    <div class="bn-image-slider-right-space" [style.paddingTop.px]="imageHeight/2-10">
       <button mat-icon-button  class="bn-button-fa"
         [disabled]="disableRight"(click)="fireAction('forward')"> 
         <i class="fas fa-angle-double-right"></i>

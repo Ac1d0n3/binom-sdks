@@ -15,7 +15,7 @@
     "migrations": "./schematics/migrations.json"
   },
   "scripts": {
-    "build:sass": "sass styles/privacy.scss assets/privacy.css",
+    "build:sass": "sass assets/privacy.scss assets/privacy.css",
     "build:schematics": "tsc -p tsconfig.schematics.json",
     "postbuild:schematics": "copyfiles schematics/migrations.json schematics/collection.json ../../../dist/binom/sdk-privacy/"
   },
