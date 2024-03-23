@@ -1,0 +1,31 @@
+
+@if(secureMode === 'auth'){
+    @if(colConf.editable && row.edit  && !disableEdit){
+      <ng-container *bnShowAuthed="true">
+        <ng-container *ngTemplateOutlet="rowEdit"></ng-container>
+      </ng-container>
+      <ng-container *bnShowAuthed="false">
+        <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+      </ng-container>
+    } @else { <ng-container *ngTemplateOutlet="notRowEdit"></ng-container> }
+  } 
+  @else if(secureMode === 'roles'){
+    @if(colConf.editable  && !disableEdit && (row.edit || colConf.config.quickaction)){
+      <ng-container *bnShowRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+        <ng-container *ngTemplateOutlet="rowEdit"></ng-container>
+      </ng-container>
+      <ng-container *bnShowNotRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+        <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+      </ng-container>
+    }
+    @else { <ng-container *ngTemplateOutlet="notRowEdit"></ng-container> }
+  }
+  
+  <ng-template #rowEdit>
+    <bn-ratings (ratingValue)='setAction(colConf.config.action,row,$event)' [rating]="row[colConf.name]" [size]="colConf.config.size" [disabled]="false" [max]="colConf.config.max" [icontype]="colConf.config.icontype" [color]="colConf.config.color"></bn-ratings>
+  </ng-template>
+  
+  <ng-template #notRowEdit>
+    <bn-ratings [rating]="row[colConf.name]" [size]="colConf.config.size" [disabled]="true" [max]="colConf.config.max" [icontype]="colConf.config.icontype" [color]="colConf.config.color"></bn-ratings>
+  </ng-template>
+  

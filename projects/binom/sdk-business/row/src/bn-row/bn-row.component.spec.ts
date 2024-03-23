@@ -8,12 +8,10 @@ describe('BnRowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BnRowComponent ]
+      imports: [BnRowComponent]
     })
     .compileComponents();
-  });
-
-  beforeEach(() => {
+    
     fixture = TestBed.createComponent(BnRowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

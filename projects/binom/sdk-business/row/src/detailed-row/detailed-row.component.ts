@@ -3,12 +3,12 @@ import { BnAuthDirective, BnRolesDirective } from '@binom/sdk-user/core';
 import { BnRowComponent } from '../bn-row/bn-row.component';
 import { TranslateModule } from '@ngx-translate/core';
 
-
 @Component({
   selector: 'bn-detailed-row',
-  templateUrl: './detailed-row.component.html',
   standalone: true,
-  imports:[BnAuthDirective, BnRolesDirective, BnRowComponent, TranslateModule]
+  imports:[BnAuthDirective, BnRolesDirective, BnRowComponent, TranslateModule],
+  templateUrl: './detailed-row.component.html',
+  styleUrl: './detailed-row.component.css'
 })
 export class DetailedRowComponent implements OnInit {
 

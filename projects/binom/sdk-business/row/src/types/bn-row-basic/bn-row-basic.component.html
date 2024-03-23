@@ -1,0 +1,125 @@
+@if(secureMode === 'auth'){
+    @if(colConf.editable && row.edit && !disableEdit){
+      <ng-container *bnShowAuthed="true">
+        <ng-container *ngTemplateOutlet="rowEdit"></ng-container>
+      </ng-container>
+      <ng-container *bnShowAuthed="false">
+        <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+      </ng-container>
+    } @else{
+      <ng-container *ngTemplateOutlet="notRowEdit" ></ng-container>
+    }
+  }
+  
+  @else if(secureMode === 'roles'){
+    @if(colConf.editable && row.edit && !disableEdit){
+      <ng-container *bnShowRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+        <ng-container *ngTemplateOutlet="rowEdit"></ng-container>
+      </ng-container>
+      <ng-container *bnShowNotRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+        <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+      </ng-container>
+    } @else {
+      <ng-container *ngTemplateOutlet="notRowEdit" ></ng-container>
+    }
+  }
+  
+  <ng-template #rowEdit>
+    @if( (colConf.config.type === 'text' || colConf.config.type === 'string' || colConf.config.type === 'number' ||  
+          colConf.config.type === 'icon' || colConf.config.type === 'currency' || colConf.config.type === 'date') 
+        && !colConf.config.nested
+    ){
+      <mat-form-field color="accent">
+        <mat-label>{{translateTag + colConf.name | translate}}</mat-label>
+        <input matInput *ngIf="colConf.config.type === 'string' || colConf.config.type === 'number' "
+        [(ngModel)]="row[colConf.name]" [value]="row[colConf.name]" (ngModelChange)="validate(row)">
+  
+        <textarea matInput *ngIf="colConf.config.type === 'text'"
+        [(ngModel)]="row[colConf.name]" (ngModelChange)="validate(row)" class="tableTextBox" rows="4">
+          {{row[colConf.name]}}
+        </textarea>
+  
+        @if(colConf.config.type === 'date'){
+          <input [(ngModel)]="row[colConf.name]" matInput [matDatepicker]="picker">
+        }
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+  
+      </mat-form-field>
+  
+      @if(row.errors && row.error){
+        <div>
+          @if(row.errors[colConf.name] != ''){
+            <mat-error class="mat-error">
+              @if(row.errors[colConf.name]){
+                <span>
+                  {{(translateTag + row.errors[colConf.name].msgStart) | translate}}
+                  {{(row.errors[colConf.name].msgMiddle?row.errors[colConf.name].msgMiddle:'') | translate}}
+                  {{(translateTag + row.errors[colConf.name].msgEnd? row.errors[colConf.name].msgEnd:'')  | translate}}
+                </span>
+              }
+            </mat-error>
+          }
+        </div>
+      }
+    }
+    <mat-checkbox style="padding-left:9px" *ngIf="colConf.config.type === 'boolean' && !colConf.config.nested" [(ngModel)]="row[colConf.name]"></mat-checkbox>
+    @if(colConf.config.nested){
+  
+    }
+  </ng-template>
+  
+  
+  
+  <ng-template #notRowEdit>
+  @if(!colConf.config.nested){
+  
+    @if(colConf.config.type === 'string'){
+      <span [innerHTML]="row[colConf.name] | bnhighlight:searchText"></span>
+    }
+    @else if(colConf.config.type === 'uuid' || colConf.config.type === 'monospace'){
+      <span class="table-monospace" [innerHTML]="row[colConf.name] | bnhighlight:searchText"></span>
+    }
+    @else if(colConf.config.type === 'text' && row[colConf.name] !== undefined){
+      @if(!colConf.config.slice && !colConf.config.fixed  || (colConf.config.slice && row[colConf.name].length < colConf.config.slice)){
+        <span 
+        [innerHTML]="row[colConf.name] | bnhighlight:searchText">
+        </span>
+      }
+      @else if(colConf.config.slice && row[colConf.name].length > colConf.config.slice){
+        <span  [matTooltip]="row[colConf.name]"
+        [innerHTML]="(row[colConf.name] | bnhighlight:searchText | slice:0:colConf.config.slice-3) + '...'">
+        </span>
+      } 
+      @else if (colConf.config.fixed){
+        <div *ngIf="" [style]="'height:'+colConf.config.height+';overflow:auto;width:100%'"
+        [innerHTML]="row[colConf.name] | bnhighlight:searchText ">
+        </div>
+      }
+     
+    }
+    @else if(colConf.config.type === 'boolean'){
+      <div  style="padding-left: 10px !important;">
+        <i [class]="row[colConf.name]? 'far fa-check-square' : 'far fa-square'"></i>
+      </div>
+    }
+    @else if (colConf.config.type === 'number'){
+      {{ row[colConf.name] |  number: '4.2':  translate.currentLang.substring(0, 2)}}
+    }
+    @else if (colConf.config.type === 'icon'){
+      <i class="{{ row[colConf.name] }}"></i>
+    }
+    @else if (colConf.config.type === 'currency'){
+      {{ row[colConf.name]  |  number: '4.2':  translate.currentLang.substring(0, 2) }}
+    }
+    @else if (colConf.config.type === 'date'){
+      {{ row[colConf.name] |  date: 'shortDate': '' : translate.currentLang.substring(0, 2) }}
+    }
+  
+  }
+  @else if(colConf.config.nested){
+    {{resolve(colConf.name,row)}}
+  }
+  
+  </ng-template>
+  
