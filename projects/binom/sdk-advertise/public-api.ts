@@ -1,0 +1,1 @@
+export const BINOM_SDK_ADVERTISE = "@binom/sdk-advertise";

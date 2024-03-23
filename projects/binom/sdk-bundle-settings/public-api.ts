@@ -1,0 +1,1 @@
+export const BINOM_SDK_BUNDLE = "@binom/sdk-bundle-settings";
