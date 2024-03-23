@@ -39,6 +39,9 @@
       "@binom/sdk-charts": [
         "./dist/binom/sdk-charts"
       ],
+      "@binom/sdk-chat": [
+        "./dist/binom/sdk-chat"
+      ],
       "@binom/sdk-conten/*": [
         "./dist/binom/sdk-content/*"
       ],

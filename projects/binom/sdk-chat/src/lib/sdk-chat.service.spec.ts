@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SdkSocialService } from './sdk-social.service';
+import { SdkChatService } from './sdk-chat.service';
 
-describe('SdkSocialService', () => {
-  let service: SdkSocialService;
+describe('SdkChatService', () => {
+  let service: SdkChatService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SdkSocialService);
+    service = TestBed.inject(SdkChatService);
   });
 
   it('should be created', () => {

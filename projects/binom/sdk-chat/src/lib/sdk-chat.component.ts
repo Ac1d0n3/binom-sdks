@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-sdk-files',
+  selector: 'lib-sdk-chat',
   standalone: true,
   imports: [],
   template: `
     <p>
-      sdk-files works!
+      sdk-chat works!
     </p>
   `,
   styles: ``
 })
-export class SdkFilesComponent {
+export class SdkChatComponent {
 
 }

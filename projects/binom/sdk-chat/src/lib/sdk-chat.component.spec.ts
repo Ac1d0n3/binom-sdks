@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SdkSocialComponent } from './sdk-social.component';
+import { SdkChatComponent } from './sdk-chat.component';
 
-describe('SdkSocialComponent', () => {
-  let component: SdkSocialComponent;
-  let fixture: ComponentFixture<SdkSocialComponent>;
+describe('SdkChatComponent', () => {
+  let component: SdkChatComponent;
+  let fixture: ComponentFixture<SdkChatComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SdkSocialComponent]
+      imports: [SdkChatComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SdkSocialComponent);
+    fixture = TestBed.createComponent(SdkChatComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
