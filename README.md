@@ -1,4 +1,4 @@
-# BinomSdks
+# Binom Sdks
 
 changed to monorepo
 
@@ -8,19 +8,29 @@ Reasons:
 - only one documentation and Demo App needed
 - less install space and installation needed on my machines :)
 
-use to open and watch all:
-https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals
-
-
 -------------------------------------------------------------------------
 
+## sdk-bundle-settings Bundle for all SDKs
+use this to install all SDKs and overall Settings Menu / Sidebar
+npm install @binom/sdk-bundle-settings
+
+
 ## sdk-core 
+- included in all other sdk's.
+- includes Logger / Utils / Router Helper / bnIcon / and more see Read Me in the subfolder for more details
+- includes Fonts i typical use in my projects to host them local (DSGVO Reason)
 
 ## sdk-animation 
+- includes an Animate on Scroll Service / Component 
+- includes a RouterFade Animation
 
 ## sdk-layout
+- includes CSS Grid Layout Directives and Svc to calc fix Grid
+- SplitContent / GridBlocks / ShowOnDevice Directive / NotOnPhoneGuard
 
 ## sdk-theme
+- includes some binom base themes 
+- includes Themes Svc and Menu and Switch for it
 
 ## sdk-user
 
@@ -29,6 +39,8 @@ https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-termi
 ## sdk-tags-and-ratings
 
 ## sdk-privacy
+
+## sdk-nav
 
 ## sdk-prism
 
@@ -39,4 +51,14 @@ https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-termi
 ## sdk-location
 
 ## sdk-image
+
+## sdk-advertise
+
+## sdk-business
+
+## sdk-charts
+
+## sdk-content
+
+
 

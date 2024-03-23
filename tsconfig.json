@@ -51,6 +51,9 @@
       "@binom/sdk-core": [
         "./dist/binom/sdk-core"
       ],
+      "@binom/sdk-files": [
+        "./dist/binom/sdk-files"
+      ],
       "@binom/sdk-forms/*": [
         "./dist/binom/sdk-forms/*"
       ],
@@ -98,6 +101,9 @@
       ],
       "@binom/sdk-privacy": [
         "./dist/binom/sdk-privacy"
+      ],
+      "@binom/sdk-social": [
+        "./dist/binom/sdk-social"
       ],
       "@binom/sdk-tags-and-ratings/*": [
         "./dist/binom/sdk-tags-and-ratings/*"

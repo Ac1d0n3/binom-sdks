@@ -30,7 +30,11 @@ export class ImageMainComponent implements AfterViewInit {
   data = [
     {
       title: 'components',
-      data: ['buttons-media']
+      data: ['buttons-media','image-stripe','image-info','image-bg-slider','image-box-slider']
+    },
+    {
+      title: 'directives',
+      data: ['image-lazy']
     },
   ]
 

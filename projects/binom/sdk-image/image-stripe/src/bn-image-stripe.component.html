@@ -1,35 +1,37 @@
-<div class="bn-image-stripe-wrapper content-bg mat-evaluation-z3" [style.height.px]="imageHeight +margin*2">
-    <div class="bn-image-slider-left-space"  [style.paddingTop.px]="imageHeight/2-10">
-      <button mat-icon-button class="bn-button-fa"
-        (click)="fireAction('backward')">
-        <i class="fas fa-angle-double-left"></i>
-      </button>
-    </div>
-    
-    <div class="bn-image-stripe-content" #imageStripe >
-     <div [style.width.px]="(imageData.length+1)*imageSize" >
-      @for(img of imageData;  track img.url; let i = $index){
-        <div   
-        class="bn-image-stripe-thumbnail mat-evaluation-z3 " 
-        style="background: url({{img.url}});background-size:cover; " 
-        [style.opacity]="i == activeImage?1:''"
-        [style.marginTop.px]="margin"
-        [style.marginLeft.px]="margin"
-        [style.width.px]="imageSize" 
-        [style.height.px]="imageHeight"
-        (click)="selectImage(img)">
-        @if(i == activeImage){
-          <div class="bn-image-stripe-active color-accentbg"></div>
-        }
-        </div>
+<div class="bn-image-stripe-wrapper content-bg mat-evaluation-z3" 
+[style.height.px]="imageHeight +margin*2">
+  <div class="bn-image-slider-left-space"  [style.paddingTop.px]="imageHeight/2-10">
+    <button mat-icon-button class="bn-button-fa"
+      (click)="fireAction('backward')">
+      <i class="fas fa-angle-double-left"></i>
+    </button>
+  </div>
+
+  <div class="bn-image-stripe-content" #imageStripe >
+    <div [style.width.px]="(imageData.length+1)*imageSize" >
+    @for(img of imageData;  track img.url; let i = $index){
+      <div   
+      class="bn-image-stripe-thumbnail mat-evaluation-z3" 
+      style="background: url({{img.url}});background-size:cover;" 
+      [style.opacity]="i == activeImage?1:''"
+      [style.marginTop.px]="margin"
+      [style.marginLeft.px]="margin"
+      [style.width.px]="imageSize" 
+      [style.height.px]="imageHeight"
+      (click)="selectImage(img)">
+      @if(i == activeImage){
+        <div class="bn-image-stripe-active color-accentbg"></div>
       }
-     </div>
+      </div>
+    }
     </div>
-    
-    <div class="bn-image-slider-right-space" [style.paddingTop.px]="imageHeight/2-10">
-      <button mat-icon-button  class="bn-button-fa"
-        [disabled]="disableRight"(click)="fireAction('forward')"> 
-        <i class="fas fa-angle-double-right"></i>
-      </button></div>
-    </div>
+  </div>
+
+  <div class="bn-image-slider-right-space" [style.paddingTop.px]="imageHeight/2-10">
+    <button mat-icon-button  class="bn-button-fa"
+      [disabled]="disableRight"(click)="fireAction('forward')"> 
+      <i class="fas fa-angle-double-right"></i>
+    </button>
+  </div>
+</div>
     
