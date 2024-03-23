@@ -1,0 +1,6 @@
+@for( item of row[colConf.name]; track item[colConf.name]; let j = $index){
+  {{item[colConf.display]}} 
+  @if(row[colConf.name].length>1 && j < row[colConf.name].length-1){
+    <span>/</span>
+  }
+}

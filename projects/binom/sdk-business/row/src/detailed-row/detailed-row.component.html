@@ -1,0 +1,28 @@
+
+@for(col of columns; track col){
+  @if(col.clear){
+    <div class="clearfix"></div>
+  }
+  @if(col.label){
+    <div style="margin-top:15px;margin-bottom:10px; " class="toolbar-underline">
+      <h3 class="color-primary">{{translateTag + col.label | translate}}</h3>
+    </div>
+  }
+  @if(!row.edit || row.edit && col.editable){
+    <div class="bn-detailed-row bn-detailed-row-{{col.type}}" 
+    [style]="'display:inline-block; width:'+col.width+';'+(col.maxWidth? 'max-width:'+col.maxWidth+'px':'') ">
+      @if(col.type!=='tags' && !row.edit || disableEdit){
+        <span><strong>{{translateTag+col.name | translate}}:&nbsp;</strong></span>
+      }
+      @if((!col.editable && row.edit || (row.edit && (col.type==='switch'|| col.type==='rating' || col.type==='tags'))) && !disableEdit  ){
+        <span><b>{{translateTag+col.name | translate}}: </b></span>
+      }
+      <bn-rows [tagStyleDisabled]="false" [disableEdit]="disableEdit"
+        [col]="col" [row]="row" [searchText]="searchText"  (quickAction)="setAction($event)"
+        [secureMode]="config.secureMode" [disableAll]="disableAll"
+        [enableToolTips]="enableToolTips" [translateTag]="translateTag">
+      </bn-rows>
+    
+    </div>
+  }
+}

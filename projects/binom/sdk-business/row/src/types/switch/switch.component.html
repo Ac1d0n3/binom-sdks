@@ -1,0 +1,64 @@
+<div class="pad-top-10" style="display:inline-block">
+
+  @if(secureMode === 'auth'){
+
+    @if(colConf.config.quickaction && !row.edit && !disableEdit){
+      <ng-container *bnShowAuthed="true">
+        <ng-container *ngTemplateOutlet="rowViewAction"></ng-container>
+      </ng-container>
+      <ng-container *bnShowAuthed="false">
+        <ng-container *ngTemplateOutlet="rowView"></ng-container>
+      </ng-container>
+    } @else if(colConf.editable && row.edit  && !disableEdit){
+      <ng-container *bnShowAuthed="true">
+        <ng-container *ngTemplateOutlet="rowViewAction"></ng-container>
+      </ng-container>
+      <ng-container *bnShowAuthed="false">
+        <ng-container *ngTemplateOutlet="rowView"></ng-container>
+      </ng-container>
+    } @else if((!row.edit && !colConf.config.quickaction) || !colConf.editable || disableEdit ){
+      <ng-container *ngTemplateOutlet="rowView"></ng-container>
+    }
+
+  }@else if(secureMode === 'roles'){
+    @if(colConf.config.quickaction && !row.edit && !disableEdit){
+      <ng-container *bnShowRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+        <ng-container *ngTemplateOutlet="rowViewAction"></ng-container>
+      </ng-container>
+      <ng-container *bnShowNotRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+        <ng-container *ngTemplateOutlet="rowView"></ng-container>
+      </ng-container>
+    } @else if(colConf.editable && row.edit  && !disableEdit){
+      <ng-container *bnShowRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+        <ng-container *ngTemplateOutlet="rowViewAction"></ng-container>
+      </ng-container>
+      <ng-container *bnShowNotRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+        <ng-container *ngTemplateOutlet="rowView"></ng-container>
+      </ng-container>
+    } @else if((!row.edit && !colConf.config.quickaction) || !colConf.editable || disableEdit ){
+      <ng-container *ngTemplateOutlet="rowView"></ng-container>
+    }
+  }
+
+</div>
+
+<ng-template #rowView >
+  @if(!colConf.config.switchCheckbox){
+    <i [class]="row[colConf.name]? 'fa fa-toggle-on' : 'fa fa-toggle-off'"></i>
+  } @else if(colConf.config.switchCheckbox && !colConf.config.onlyChecked){
+    <i *[class]="row[colConf.name]? 'fas fa-check-square' : 'far fa-square'"></i>
+  } @else if(colConf.config.switchCheckbox && colConf.config.onlyChecked){
+    <i [class]="row[colConf.name]? 'fas fa-check' : colConf.config.showCross? 'fas fa-times': ''"></i>
+  }
+</ng-template>
+
+<ng-template #rowViewAction>
+
+  <button mat-button style="margin: 0 auto" [color]="colConf.config.color? colConf.config.color:'accent'" [hidden]="(colConf.config.showIfFieldValueNotNull? (row[colConf.name] === null? true: false) : false)"
+    (click)="setAction(row, colConf.config.action, colConf.name)" 
+    [disabled]="row.state=='locked' || row.disableColSwitch || (row[colConf.config.disableField] === colConf.config.disableOnValue && colConf.config.disableOnValue !== undefined)"
+> 
+  <i [class]="(colConf.config.switchCheckbox ?row[colConf.name]? 'fas ' : 'far ' : 'fa ') + (colConf.config.switchCheckbox ?row[colConf.name]? 'fa-check-square' : 'fa-square' : row[colConf.name]? 'fa-toggle-on' : 'fa-toggle-off')"></i>
+  </button>
+ 
+</ng-template>

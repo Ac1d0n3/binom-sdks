@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SdkBusinessService } from './sdk-business.service';
+import { BnRowsService } from './bn-rows.service';
 
-describe('SdkBusinessService', () => {
-  let service: SdkBusinessService;
+describe('BnRowsService', () => {
+  let service: BnRowsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SdkBusinessService);
+    service = TestBed.inject(BnRowsService);
   });
 
   it('should be created', () => {

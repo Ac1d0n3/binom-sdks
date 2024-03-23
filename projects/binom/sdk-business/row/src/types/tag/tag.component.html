@@ -1,0 +1,31 @@
+@if(secureMode === 'auth'){
+  @if(colConf.editable && row.edit  && !disableEdit){
+    <ng-container *bnShowAuthed="true">
+      <ng-container *ngTemplateOutlet="rowEdit"></ng-container>
+    </ng-container>
+    <ng-container *bnShowAuthed="false">
+      <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+    </ng-container>
+  } @else {
+    <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+  }
+} @else if(secureMode === 'roles'){
+  @if(colConf.editable && row.edit && !disableEdit){
+    <ng-container *bnShowRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+      <ng-container *ngTemplateOutlet="rowEdit"></ng-container>
+    </ng-container>
+    <ng-container *bnShowNotRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+      <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+    </ng-container>
+  } @else {
+    <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+  }
+}
+
+<ng-template #rowEdit>
+  <bn-tags-edit [styleDisabled]="styleDisabled" [tags]="row[colConf.name]"></bn-tags-edit>
+</ng-template>
+
+<ng-template #notRowEdit>
+  <bn-tags-edit [styleDisabled]="styleDisabled" [tags]="row[colConf.name]"></bn-tags-edit>
+</ng-template>

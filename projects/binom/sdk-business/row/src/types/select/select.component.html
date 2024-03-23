@@ -1,0 +1,68 @@
+@if(secureMode === 'auth'){
+  @if(colConf.editable && row.edit  && !disableEdit){
+    <ng-container *bnShowAuthed="true">
+      <ng-container *ngTemplateOutlet="rowEdit"></ng-container>
+    </ng-container>
+    <ng-container *bnShowAuthed="false">
+      <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+    </ng-container>
+  } @else { <ng-container *ngTemplateOutlet="notRowEdit"></ng-container> }
+}
+@else if (secureMode === 'roles'){
+  @if((colConf.editable && row.edit || colConf.config.quickaction) && !disableEdit){
+    <ng-container *bnShowRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+      <ng-container *ngTemplateOutlet="rowEdit"></ng-container>
+    </ng-container>
+    <ng-container *bnShowNotRoles="{access: colConf.config.access, ownedby: row[colConf.ownerId] }">
+      <ng-container *ngTemplateOutlet="notRowEdit"></ng-container>
+    </ng-container>
+  } @else { <ng-container *ngTemplateOutlet="notRowEdit"></ng-container> }
+}
+
+<ng-template #rowEdit>
+  <div [class.bn-row-select-wrapper]="colConf.config.quickaction && !row.edit">
+    @if(colConf.config.value === undefined){
+      <mat-form-field  [class.bnRowSelect]="colConf.config.quickaction && !row.edit">
+        <mat-label>{{translateTag + colConf.name | translate}} </mat-label>
+         <mat-select [multiple]='colConf.config.multiple' (ngModelChange)="openedChange(colConf.config.action,$event, row)" [(ngModel)]="row[colConf.name]" [compareWith]="compareFn">
+           <mat-option *ngFor="let item of colConf.config.selectList" [value]="item">
+             {{item[colConf.config.display]}}
+           </mat-option>
+         </mat-select>
+       </mat-form-field>
+    }
+    @else {
+      <mat-form-field [class.bnRowSelect]="colConf.config.quickaction && !row.edit">
+        <mat-label>{{translateTag + colConf.name | translate}} </mat-label>
+         <mat-select [multiple]='colConf.config.multiple' (ngModelChange)="openedChange(colConf.config.action,$event, row)"
+         [(ngModel)]="row[colConf.name]" >
+           <mat-option *ngFor="let item of colConf.config.selectList" [value]="item[colConf.config.value]">
+             {{item[colConf.config.display]}}
+           </mat-option>
+         </mat-select>
+       </mat-form-field>
+    }
+  </div>
+</ng-template>
+
+<ng-template #notRowEdit>
+  @if(colConf.config.value !== undefined && colConf.config.value !== ''){
+    @for(item of colConf.config.selectList; track item){
+      @if(item[colConf.config.value] == row[colConf.name]){
+        <span>{{item[colConf.config.display]}}</span>
+      }
+    }
+  } @else if((colConf.config.value === undefined || colConf.config.value === '') && !colConf.config.printAsList){
+    @for(item of row[colConf.name]; track item){
+      <span>{{item[colConf.config.display]}}</span>
+    }
+  } @else if((colConf.config.value === undefined || colConf.config.value === '') && colConf.config.printAsList){
+    <div style="padding-left:15px;margin-bottom:10px">
+      <ul>
+        @for(item of row[colConf.name]; track item[colConf.name]){
+          <li style="margin-left:10px">{{item[colConf.config.display]}}</li>
+        }
+      </ul>
+    </div>
+  }
+</ng-template>

@@ -1,0 +1,24 @@
+.bn-small-image-slider-full-wrapper{
+    display: grid;
+    grid-template-rows: 1fr 60px;
+    height: 80vh
+}
+
+.bn-small-image-slider-image{
+    height:150px;
+    width:250px;
+    margin: 0 auto;
+    border: 1px solid;
+    border-radius: 5px;
+    background-size: contain !important; 
+    background-repeat: no-repeat !important; 
+    background-position: center !important;
+}
+  
+.bn-small-image-slider-full{
+    height:100%;
+    width:100%;
+    background-size: contain !important; 
+    background-repeat: no-repeat !important; 
+    background-position: center !important;
+}

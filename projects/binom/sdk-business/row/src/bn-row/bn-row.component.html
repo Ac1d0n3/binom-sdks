@@ -1,0 +1,38 @@
+
+<bn-row-basic *ngIf="col.type==='basic' || col.type===''"
+  [colConf]="col" [row]="row" [searchText]="searchText"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-basic>
+<bn-row-select *ngIf="col.type==='select'"
+  [colConf]="col" [row]="row" [searchText]="searchText"  (quickAction)="setAction($event)"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-select>
+<bn-row-rating *ngIf="col.type==='rating'" 
+  [colConf]="col" [row]="row" [searchText]="searchText"  (quickAction)="setAction($event)"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-rating>
+<bn-row-switch *ngIf="col.type==='switch'" (quickAction)="setAction($event)"
+
+  [colConf]="col" [row]="row" [searchText]="searchText"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-switch>
+<bn-row-tag *ngIf="col.type==='tags'"
+  [colConf]="col" [row]="row" [searchText]="searchText" [styleDisabled]="tagStyleDisabled"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-tag>
+<bn-row-loop *ngIf="col.type==='loop'"
+  [colConf]="col" [row]="row" [searchText]="searchText"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-loop>
+<bn-row-icon-loop *ngIf="col.type==='iconloop'"
+  [colConf]="col" [row]="row" [searchText]="searchText"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-icon-loop>
+<bn-row-image *ngIf="col.type==='image'"
+  [colConf]="col" [row]="row" [searchText]="searchText"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-image>
+<bn-row-link *ngIf="col.type==='link'"
+  [colConf]="col" [row]="row" [searchText]="searchText"
+  [secureMode]="secureMode" [disableAll]="disableAll" [disableEdit]="disableEdit"
+  [enableToolTips]="enableToolTips" [translateTag]="translateTag"></bn-row-link>

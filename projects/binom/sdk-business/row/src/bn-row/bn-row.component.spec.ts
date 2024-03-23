@@ -1,18 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SdkBusinessComponent } from './sdk-business.component';
+import { BnRowComponent } from './bn-row.component';
 
-describe('SdkBusinessComponent', () => {
-  let component: SdkBusinessComponent;
-  let fixture: ComponentFixture<SdkBusinessComponent>;
+describe('BnRowComponent', () => {
+  let component: BnRowComponent;
+  let fixture: ComponentFixture<BnRowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SdkBusinessComponent]
+      declarations: [ BnRowComponent ]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(SdkBusinessComponent);
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(BnRowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
