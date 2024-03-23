@@ -4,10 +4,10 @@
   "description": "layout Lib for projects",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ac1d0n3/binom-sdk-layout"
+    "url": "git+https://github.com/Ac1d0n3/binom-sdks"
   },
   "bugs": {
-    "url": "https://github.com/Ac1d0n3/binom-sdk-layout/issues"
+    "url": "https://github.com/Ac1d0n3/binom-sdks/issues"
   },
   "homepage": "https://binom.net",
   "schematics": "./schematics/collection.json",
@@ -15,10 +15,8 @@
     "migrations": "./schematics/migrations.json"
   },
   "scripts": {
-    "build:sass": "sass styles/layout.scss assets/sdk-layout/layout.css",
-    "build:schematics": "tsc -p tsconfig.schematics.json",
-    "postbuild:schematics": "copyfiles schematics/migrations.json schematics/collection.json ../../../dist/binom/sdk-layout/"
-  },
+    "build:sass": "sass styles/layout.scss assets/sdk-layout/layout.css"
+   },
   "exports": {
     "./styles": {
       "default": "./styles/layout.scss"

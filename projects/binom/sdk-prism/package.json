@@ -4,10 +4,10 @@
   "description": "prism Lib for projects",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ac1d0n3/binom-sdk-prism"
+    "url": "git+https://github.com/Ac1d0n3/binom-sdks"
   },
   "bugs": {
-    "url": "https://github.com/Ac1d0n3/binom-sdk-prism/issues"
+    "url": "https://github.com/Ac1d0n3/binom-sdks/issues"
   },
   "homepage": "https://binom.net",
   "schematics": "./schematics/collection.json",

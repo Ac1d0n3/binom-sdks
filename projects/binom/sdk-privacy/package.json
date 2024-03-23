@@ -4,10 +4,10 @@
   "description": "privacy Lib for projects",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ac1d0n3/binom-sdk-privacy"
+    "url": "git+https://github.com/Ac1d0n3/binom-sdks"
   },
   "bugs": {
-    "url": "https://github.com/Ac1d0n3/binom-sdk-privacy/issues"
+    "url": "https://github.com/Ac1d0n3/binom-sdks/issues"
   },
   "homepage": "https://binom.net",
   "schematics": "./schematics/collection.json",
