@@ -1,0 +1,1 @@
+export const BINOM_NAV = "@binom/sdk-nav";

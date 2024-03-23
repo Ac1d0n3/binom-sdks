@@ -1,0 +1,1 @@
+export * from './src/bn-icon-sidebar.component';

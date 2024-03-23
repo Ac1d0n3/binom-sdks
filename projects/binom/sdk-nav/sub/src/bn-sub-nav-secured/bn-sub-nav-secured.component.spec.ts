@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SdkNavComponent } from './sdk-nav.component';
+import { BnSubNavSecuredComponent } from './bn-sub-nav-secured.component';
 
-describe('SdkNavComponent', () => {
-  let component: SdkNavComponent;
-  let fixture: ComponentFixture<SdkNavComponent>;
+describe('BnSubNavSecuredComponent', () => {
+  let component: BnSubNavSecuredComponent;
+  let fixture: ComponentFixture<BnSubNavSecuredComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SdkNavComponent]
+      imports: [BnSubNavSecuredComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(SdkNavComponent);
+    fixture = TestBed.createComponent(BnSubNavSecuredComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
